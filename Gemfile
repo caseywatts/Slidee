@@ -31,3 +31,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+
+
+##Specific to our App
+gem 'etherpad-lite'
+
