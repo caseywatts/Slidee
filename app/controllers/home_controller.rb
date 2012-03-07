@@ -3,12 +3,12 @@ class HomeController < ApplicationController
 #    require 'etherpad-lite'
 
 # Connect to your Etherpad Lite instance
- ether = EtherpadLite.connect(:local, '8JELX2nMKQOIWbr1W7gN7EZyWlFaoQrq')
+ #ether = EtherpadLite.connect(:local, '8JELX2nMKQOIWbr1W7gN7EZyWlFaoQrq')
 
 # Get a Pad (or create one if it doesn't exist)
-@pad = ether.pad('test')
+#@pad = ether.pad('test')
 
-@pad.text = "This is what my locally hosted pad's text contents are. That other pad is hosted on beta.etherpad.net"
+#@pad.text = "This is what my locally hosted pad's text contents are. That other pad is hosted on beta.etherpad.net"
 
 
 
