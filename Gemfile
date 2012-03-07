@@ -35,6 +35,6 @@ gem 'jquery-rails'
 
 ##Specific to our App
 gem 'etherpad-lite'
-gem 'sqlite3'
+gem 'postgresql'
 gem 'rmagick'
 gem 'paperclip'
