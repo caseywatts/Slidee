@@ -1,0 +1,21 @@
+<h1>Listing slideimages</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @slideimages.each do |slideimage| %>
+  <tr>
+    <td><%= link_to 'Show', slideimage %></td>
+    <td><%= link_to 'Edit', edit_slideimage_path(slideimage) %></td>
+    <td><%= link_to 'Destroy', slideimage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Slideimage', new_slideimage_path %>

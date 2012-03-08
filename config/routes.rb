@@ -1,4 +1,10 @@
 LFS::Application.routes.draw do
+  resources :slideimages
+
+  resources :presentations
+
+  resources :courses
+
   resources :slides
 
   get "home/index"
