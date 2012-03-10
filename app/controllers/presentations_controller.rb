@@ -82,16 +82,6 @@ class PresentationsController < ApplicationController
     end
   end
 
-  def create_slides
-    require 'RMagick'
-    include Magick
-    #@presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
-    #@presentation
-    #slides = ImageList.new(Slidedeck.last.deck.url)
-    slides = ImageList.new("app/assets/ST_Training_-_Week_7.pdf")
-    slides.each { |slide|
-      Slide.create(:presentation => @presentation)
-    }
-  end
+
 
 end
