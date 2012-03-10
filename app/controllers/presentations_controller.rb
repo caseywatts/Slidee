@@ -24,8 +24,7 @@ class PresentationsController < ApplicationController
   # GET /presentations/new
   # GET /presentations/new.json
   def new
-    @course = Course.new
-    @presentation = Presentation.new("course_id" => "1" )
+    @presentation = Presentation.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,9 +41,10 @@ class PresentationsController < ApplicationController
   # POST /presentations.json
   def create
     @presentation = Presentation.new(params[:presentation])
+    @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
 
     respond_to do |format|
-      if @presentation.save
+      if @presentation #.save
         format.html { redirect_to @presentation, :notice => 'Presentation was successfully created.' }
         format.json { render :json => @presentation, :status => :created, :location => @presentation }
       else
@@ -81,4 +81,17 @@ class PresentationsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def create_slides
+    require 'RMagick'
+    include Magick
+    #@presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
+    #@presentation
+    #slides = ImageList.new(Slidedeck.last.deck.url)
+    slides = ImageList.new("app/assets/ST_Training_-_Week_7.pdf")
+    slides.each { |slide|
+      Slide.create(:presentation => @presentation)
+    }
+  end
+
 end

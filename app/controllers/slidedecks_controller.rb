@@ -40,12 +40,11 @@ class SlidedecksController < ApplicationController
   # POST /slidedecks
   # POST /slidedecks.json
   def create
-    @presentation = Presentation.create
     @slidedeck = Slidedeck.new(params[:slidedeck])
-    @slidedeck = Slidedeck.new(params[:slidedeck])
-if @slidedeck.save
-  @slidedeck.update_attributes(:presentation => @presentation)
-end
+    if @slidedeck.save #I'm not sure when to check when it saves
+      @presentation = Presentation.create
+      @slidedeck.update_attributes(:presentation => @presentation) #this should probably be in a hidden field
+    end
 
     respond_to do |format|
       if @slidedeck
