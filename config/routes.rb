@@ -1,4 +1,6 @@
 LFS::Application.routes.draw do
+  resources :users
+
   resources :slideimages
 
   resources :presentations
