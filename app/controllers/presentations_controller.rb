@@ -42,6 +42,7 @@ class PresentationsController < ApplicationController
   def create
     @presentation = Presentation.new(params[:presentation])
     @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
+    @presentation.create_slides
 
     respond_to do |format|
       if @presentation #.save

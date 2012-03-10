@@ -8,12 +8,12 @@ class Presentation < ActiveRecord::Base
   attr_accessor :course_id
 
   def create_slides
-    #@presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
+    #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
     #@presentation
     #slides = ImageList.new(Slidedeck.last.deck.url)
-    slides = ImageList.new("app/assets/ST_Training_-_Week_7.pdf")
+    slides = ImageList.new("app/assets/ST_Training_-_Week_7.pdf") #TODO write these images to ~jpg
     slides.each { |slide|
-      Slide.create(:presentation => self)
+      Slide.create(:presentation => self, :image => slide)
     }
   end
 end
