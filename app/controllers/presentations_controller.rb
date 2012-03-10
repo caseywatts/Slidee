@@ -44,6 +44,14 @@ class PresentationsController < ApplicationController
     @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
     @presentation.create_slides
 
+    #Join a group?
+    #@presentation.join_pads(user) #this doesn't work yet~ TODO
+    #etc
+    #
+
+    #Go solo!
+    #@presentation.create_pads(user) #this doesn't work yet~ TODO
+      
     respond_to do |format|
       if @presentation #.save
         format.html { redirect_to @presentation, :notice => 'Presentation was successfully created.' }

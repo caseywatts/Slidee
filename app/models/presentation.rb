@@ -5,7 +5,7 @@ class Presentation < ActiveRecord::Base
   include Magick
 
   #validates_presence_of :course_id
-  attr_accessor :course_id
+  #attr_accessor :course_id
 
   def create_slides
     #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
@@ -16,4 +16,13 @@ class Presentation < ActiveRecord::Base
       Slide.create(:presentation => self, :image => slide)
     }
   end
+
+  def create_pads(user)
+
+  end
+
+  def join_pads(user)
+
+  end
+
 end
