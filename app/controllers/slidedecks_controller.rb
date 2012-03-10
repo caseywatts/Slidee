@@ -40,10 +40,15 @@ class SlidedecksController < ApplicationController
   # POST /slidedecks
   # POST /slidedecks.json
   def create
+    @presentation = Presentation.create
     @slidedeck = Slidedeck.new(params[:slidedeck])
+    @slidedeck = Slidedeck.new(params[:slidedeck])
+if @slidedeck.save
+  @slidedeck.update_attributes(:presentation => @presentation)
+end
 
     respond_to do |format|
-      if @slidedeck.save
+      if @slidedeck
         format.html { redirect_to @slidedeck, :notice => 'Slidedeck was successfully created.' }
         format.json { render :json => @slidedeck, :status => :created, :location => @slidedeck }
       else

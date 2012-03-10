@@ -2,7 +2,7 @@ class CreatePresentations < ActiveRecord::Migration
   def change
     create_table :presentations do |t|
 
-      t.integer :course_id
+      t.references :course
       t.timestamps
     end
   end

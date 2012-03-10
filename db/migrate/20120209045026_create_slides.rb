@@ -4,7 +4,7 @@ class CreateSlides < ActiveRecord::Migration
       t.integer :number
       t.string :title
       t.text :content
-      t.integer :presentation_id
+      t.references :presentation
 
       t.timestamps
     end
