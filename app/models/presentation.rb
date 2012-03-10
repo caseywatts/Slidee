@@ -15,7 +15,7 @@ class Presentation < ActiveRecord::Base
     #slides = ImageList.new(Slidedeck.last.deck.url)
     slides = ImageList.new("app/assets/ST_Training_-_Week_7.pdf")
     slides.each { |slide|
-      Slide.create(:presentation => Presentation.last)
+      Slide.create(:presentation => Presentation.last) #can I reference to "self" or @presentation?
     }
   end
 end
