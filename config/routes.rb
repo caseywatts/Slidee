@@ -7,6 +7,8 @@ LFS::Application.routes.draw do
 
   resources :slides
 
+  resources :slidedecks
+
   get "home/index"
 
   # The priority is based upon order of creation:

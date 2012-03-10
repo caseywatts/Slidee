@@ -2,24 +2,24 @@ development:
   adapter: postgresql
   encoding: utf8
   database: project_development
-  username: caseywatts
-  password: caseywatts
+  username: casey
+  password: casey
   host: localhost
  
 test:
   adapter: postgresql
   encoding: utf8
   database: project_test
-  username: caseywatts
-  password: caseywatts
+  username: casey
+  password: casey
   host: localhost
  
 production:
   adapter: postgresql
   encoding: utf8
   database: project_production
-  username: caseywatts
-  password: caseywatts
+  username: casey
+  password: casey
   host: localhost
 
 

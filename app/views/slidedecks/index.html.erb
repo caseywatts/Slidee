@@ -1,0 +1,21 @@
+<h1>Listing slidedecks</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @slidedecks.each do |slidedeck| %>
+  <tr>
+    <td><%= link_to 'Show', slidedeck %></td>
+    <td><%= link_to 'Edit', edit_slidedeck_path(slidedeck) %></td>
+    <td><%= link_to 'Destroy', slidedeck, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Slidedeck', new_slidedeck_path %>
