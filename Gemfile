@@ -38,3 +38,6 @@ gem 'etherpad-lite'
 gem 'pg'
 gem 'rmagick'
 gem 'paperclip'
+gem 'rubycas-client', "2.2.1" #bug https://github.com/rubycas/rubycas-client-rails/issues/6
+gem 'rubycas-client-rails'
+
