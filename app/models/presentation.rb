@@ -2,6 +2,8 @@ class Presentation < ActiveRecord::Base
   belongs_to :course
   has_many :slides
   has_many :users
+  has_one :slidedeck
+
   require 'RMagick'
   include Magick
 
