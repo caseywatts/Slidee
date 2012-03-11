@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310213707) do
+ActiveRecord::Schema.define(:version => 20120311051148) do
 
   create_table "courses", :force => true do |t|
     t.datetime "created_at"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(:version => 20120310213707) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "deck_file_name"
+    t.string   "deck_content_type"
+    t.integer  "deck_file_size"
+    t.datetime "deck_updated_at"
   end
 
   create_table "slidedecks", :force => true do |t|
