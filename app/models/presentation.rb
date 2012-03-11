@@ -3,6 +3,8 @@ class Presentation < ActiveRecord::Base
   has_many :slides
   has_many :users
   has_one :slidedeck
+  has_attached_file :deck
+  has_attached_file :deckoriginal
 
   require 'RMagick'
   include Magick
