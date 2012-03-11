@@ -13,6 +13,5 @@ class AddAttachmentDeckToPresentation < ActiveRecord::Migration
     remove_column :presentations, :deck_updated_at
   end
 
-  #drop_table :slidedecks
-  #drop_table :slideimages
+
 end
