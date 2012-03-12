@@ -24,7 +24,7 @@ class SlidesController < ApplicationController
   # GET /slides/new
   # GET /slides/new.json
   def new
-    @slide = Slide.new(presentation = Presentation.first)
+    @slide = Slide.new
 
     respond_to do |format|
       format.html # new.html.erb
