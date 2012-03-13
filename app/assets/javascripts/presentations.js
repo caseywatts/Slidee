@@ -23,7 +23,6 @@ $(document).ready(function(){
   });
 
 
-
 //PgUp and PgDn move the presentation forward & backward
 //TODO: one thing that can break: pressing the buttons fast. The appendTo shouldn't be after 500ms.
 $(document).keyup(function (e) {
