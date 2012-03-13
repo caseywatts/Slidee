@@ -1,16 +1,4 @@
-  <div class="linkbar">
-    <%= link_to "<< Earlier", {:slidenumber => (@slidenumber - 1)}, :class => "last_slide" %>
-    <%= link_to "Later >>",   {:slidenumber => (@slidenumber + 1)}, :class => "next_slide" %>
-  </div>
 <div id="notice"><%= notice %></div>
 
       <%= render :partial => "presentations/slidewithnote", :collection => @presentation.slides %>
       <%#<%= render :partial => "presentations/slidewithnotejs", :collection => @presentation.slides %>%>
-
-
-<%= link_to 'Edit', edit_slide_path(@slide) %> |
-<%= link_to 'Back', slides_path %>
-
-	<script type="text/javascript">
-    $('#<%=@pad.id%>').pad({'padId':'<%=@pad.id%>','width':'100%','height':'100%','showControls':true});
-  </script>
