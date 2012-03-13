@@ -6,7 +6,7 @@ $(document).ready(function(){
   // makes the first slide visible
   $('#container').children().first().css('left', '0%')
 
-  // we use code adapted from http://stackoverflow.com/questions/4741880/slide-a-div-offscreen-using-jquery to make our divs move.
+// This code was based off the simple example here: http://stackoverflow.com/questions/4741880/slide-a-div-offscreen-using-jquery to make our divs move.
   //Clicking on the slide progresses it forward (we may want to remove this specific functionality~)
   $('.box').click(function() {
       $(this).animate({
@@ -39,7 +39,7 @@ $(document).keyup(function (e) {
       }
     );
     //make the next one appear (from right)
-    $('#container').children().first().next().animate({
+    $('#container').children().first().next().animate({ //wanted slide
       left: '0%'},
       75);
   }
@@ -54,7 +54,7 @@ $(document).keyup(function (e) {
       }
     );
     //make the last one appear (from left)
-    $('#container').children().last().animate({ //change "last" to "~previous"
+    $('#container').children().last().animate({ //wanted slide
       left: '0%'},
       75,
       function() {
@@ -65,15 +65,17 @@ $(document).keyup(function (e) {
 
 });
 
-var isCtrl = false;$(document).keyup(function (e) {
-if(e.which == 17) isCtrl=false;
-}).keydown(function (e) {
-    if(e.which == 17) isCtrl=true;
-    if(e.which == 83 && isCtrl == true) {
-        alert('Keyboard shortcuts + JQuery are even more cool!');
- 	return false;
- }
-});
+
+//an example of a two-key-press shortcut, for reference
+//var isCtrl = false;$(document).keyup(function (e) {
+//if(e.which == 17) isCtrl=false;
+//}).keydown(function (e) {
+    //if(e.which == 17) isCtrl=true;
+    //if(e.which == 83 && isCtrl == true) {
+        //alert('Keyboard shortcuts + JQuery are even more cool!');
+   //return false;
+ //}
+//});
 
 });
 
