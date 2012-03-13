@@ -25,30 +25,40 @@ $(document).ready(function(){
 
 
 //PgUp and PgDn move the presentation forward & backward
+//TODO: one thing that can break: pressing the buttons fast. The appendTo shouldn't be after 500ms.
 $(document).keyup(function (e) {
 
   if(e.keyCode == 34) { //pagedown
-    $('#container').children().first().animate({ //we should store this member in a variable, since we're manipulating it twice
-      left: '-50%'
-      }, 500, function() {
-      $(this).css('left', '-150%');
-      $(this).appendTo('#container');
-      });
+    //make current one go away (to left)
+    $('#container').children().first().animate({ //current slide
+      left: '-50%'},
+      50,
+      function() {
+        $(this).css('left', '-150%');
+        $(this).appendTo('#container');
+      }
+    );
+    //make the next one appear (from right)
     $('#container').children().first().next().animate({
-      left: '0%'
-      }, 500);
+      left: '0%'},
+      50);
   }
 
  if(e.keyCode == 33) { //pageup
-    $('#container').children().last().animate({
-      left: '50%'
-      }, 500, function() {
-      $(this).css('left', '150%');
-      $(this).prependTo('#container');
+    //make current one go away (to right)
+    $('#container').children().first().animate({ //current slide
+      left: '+50%'},
+      50,
+      function() {
+        $(this).css('left', '150%');
       });
-    $('#container').children().last().next().animate({ //change "last" to "~previous"
-      left: '0%'
-      }, 500);
+    //make the last one appear (from left)
+    $('#container').children().last().animate({ //change "last" to "~previous"
+      left: '0%'},
+      50,
+      function() {
+        $(this).prependTo('#container');
+      });
   }
 
 });
