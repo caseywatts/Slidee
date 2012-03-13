@@ -2,6 +2,8 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready(function(){
+
+  // makes the first slide visible
   $('#container').children().first().css('left', '0%')
 
   // we use code adapted from http://stackoverflow.com/questions/4741880/slide-a-div-offscreen-using-jquery to make our divs move.
