@@ -33,8 +33,8 @@ $(document).keyup(function (e) {
       $(this).appendTo('#container');
       });
     $('#container').children().first().next().animate({
-     left: '0%'
-     }, 500);
+      left: '0%'
+      }, 500);
   }
 
  if(e.keyCode == 33) { //pageup
@@ -45,8 +45,8 @@ $(document).keyup(function (e) {
       $(this).prependTo('#container');
       });
     $('#container').children().last().next().animate({ //change "last" to "~previous"
-     left: '0%'
-     }, 500);
+      left: '0%'
+      }, 500);
   }
 
 });
