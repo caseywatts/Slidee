@@ -92,9 +92,14 @@ class PresentationsController < ApplicationController
   end
 
   def takenotes
+    require 'etherpad-lite'
     @presentation = Presentation.find(params[:id])
     @slidenumber = params[:slidenumber] ? params[:slidenumber].to_i : @presentation.slides.first.id
     @slide = Slide.find(@slidenumber)
+    ether = EtherpadLite.connect(:local, '6f8uC4DjXpYgtv12uHInl1jFkmGotYr9')
+    @pad = ether.pad('somepad' + @slidenumber.to_s)
+    @pad.text = "This is what my locally hosted pad's text contents are. That other pad is hosted on beta.etherpad.net"
+
 
     respond_to do |format|
       format.html # show.html.erb

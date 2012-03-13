@@ -17,10 +17,10 @@
 </tr>
 </table>
 
-
+<%=@pad.id%>
 <%= link_to 'Edit', edit_slide_path(@slide) %> |
 <%= link_to 'Back', slides_path %>
 
 	<script type="text/javascript">
-    $('#examplePadBasic').pad({'padId':'test','width':'100%','height':'600px','showControls':true});
+    $('#examplePadBasic').pad({'padId':'<%=@pad.id%>','width':'100%','height':'600px','showControls':true});
   </script>
