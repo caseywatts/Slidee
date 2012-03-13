@@ -25,7 +25,8 @@ class Presentation < ActiveRecord::Base
     #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
     #@presentation
     #slides = ImageList.new(Slidedeck.last.deck.url)
-    deck = ImageList.new("app/assets/ST_Training_-_Week_7.pdf") #TODO write these images to ~jpg
+    #deck = ImageList.new('public' + self.deckoriginal.url) #TODO Can't find the image by this method yet
+    deck = ImageList.new('app/assets/TrainingSample.pdf')
     deck.each { |slide|
       temporaryfile = Tempfile.new("my_picture")
       slide.write("jpeg:" + temporaryfile.path) #writes the slideimage to a temporary file

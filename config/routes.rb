@@ -1,5 +1,6 @@
 LFS::Application.routes.draw do
 
+  match 'presentations/new' => 'presentations#new' #, :as => :takenotes
   match 'presentations/:id' => 'presentations#takenotes' #, :as => :takenotes
 
   resources :users
