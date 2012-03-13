@@ -28,7 +28,7 @@ class Presentation < ActiveRecord::Base
     deck = ImageList.new("app/assets/ST_Training_-_Week_7.pdf") #TODO write these images to ~jpg
     deck.each { |slide|
       temporaryfile = Tempfile.new("my_picture")
-      slide.write(temporaryfile.path) #writes the slideimage to a temporary file
+      slide.write("jpeg:" + temporaryfile.path) #writes the slideimage to a temporary file
       #location = "app/assets/presentations/" + image.hash.to_s + ".jpg" 
       #slide.write(location)
       Slide.create(:presentation => self, :image => temporaryfile)
