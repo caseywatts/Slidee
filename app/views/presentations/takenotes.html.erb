@@ -4,4 +4,6 @@
 <div id="container">
       <%= render :partial => "presentations/slidewithnote", :collection => @presentation.slides %>
 </div>
-      <%#<%= render :partial => "presentations/slidewithnotejs", :collection => @presentation.slides %>%>
+	<script type="text/javascript">
+      <%= render :partial => "presentations/slidewithnotejs", :collection => @presentation.slides %>
+  </script>
