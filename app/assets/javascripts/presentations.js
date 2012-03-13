@@ -33,13 +33,8 @@ $(document).ready(function(){
 //TODO: one thing that can break: pressing the buttons fast. The appendTo shouldn't be after 500ms.
 $(document).keyup(function (e) {
 
-  if(e.keyCode == 34) { //pagedown
-    nextslide();
-  }
-
- if(e.keyCode == 33) { //pageup
-    previousslide();
-  }
+  if(e.keyCode == 34) nextslide(); //pagedown
+  if(e.keyCode == 33) previousslide(); //pageup
 
 });
 
