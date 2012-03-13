@@ -32,7 +32,7 @@ $(document).keyup(function (e) {
     //make current one go away (to left)
     $('#container').children().first().animate({ //current slide
       left: '-50%'},
-      50,
+      75,
       function() {
         $(this).css('left', '-150%');
         $(this).appendTo('#container');
@@ -41,24 +41,26 @@ $(document).keyup(function (e) {
     //make the next one appear (from right)
     $('#container').children().first().next().animate({
       left: '0%'},
-      50);
+      75);
   }
 
  if(e.keyCode == 33) { //pageup
     //make current one go away (to right)
     $('#container').children().first().animate({ //current slide
       left: '+50%'},
-      50,
+      75,
       function() {
         $(this).css('left', '150%');
-      });
+      }
+    );
     //make the last one appear (from left)
     $('#container').children().last().animate({ //change "last" to "~previous"
       left: '0%'},
-      50,
+      75,
       function() {
         $(this).prependTo('#container');
-      });
+      }
+    );
   }
 
 });
