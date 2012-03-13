@@ -34,7 +34,19 @@ $(document).ready(function(){
 $(document).keyup(function (e) {
 
   if(e.keyCode == 34) { //pagedown
-    //make current one go away (to left)
+    nextslide();
+  }
+
+ if(e.keyCode == 33) { //pageup
+    previousslide();
+  }
+
+});
+
+
+//Next Slide
+function nextslide() {
+    //make current slide go away (to left)
     $('#container').children().first().animate({ //current slide
       left: '-50%'},
       500,
@@ -43,13 +55,15 @@ $(document).keyup(function (e) {
         $(this).appendTo('#container');
       }
     );
-    //make the next one appear (from right)
+    //make the next slide appear (from right)
     $('#container').children().first().next().animate({ //wanted slide
       left: '0%'},
       500);
-  }
+}
 
- if(e.keyCode == 33) { //pageup
+
+//Previous Slide
+function previousslide(){
     //make current one go away (to right)
     $('#container').children().first().animate({ //current slide
       left: '+50%'},
@@ -66,10 +80,7 @@ $(document).keyup(function (e) {
         $(this).prependTo('#container');
       }
     );
-  }
-
-});
-
+}
 
 //an example of a two-key-press shortcut, for reference
 var isCtrl = false;$(document).keyup(function (e) {
