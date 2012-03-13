@@ -91,6 +91,15 @@ class PresentationsController < ApplicationController
     end
   end
 
+  def takenotes
+    @presentation = Presentation.find(params[:id])
+    @slidenumber = params[:slidenumber] ? params[:slidenumber].to_i : @presentation.slides.first.id
+    @slide = Slide.find(@slidenumber)
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @presentation }
+    end
+  end
 
 end

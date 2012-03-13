@@ -80,4 +80,7 @@ class SlidesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+
+
 end

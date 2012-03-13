@@ -1,20 +1,21 @@
 LFS::Application.routes.draw do
+
+  match 'presentations/:id' => 'presentations#takenotes' #, :as => :takenotes
+
   resources :users
-
   resources :slideimages
-
   resources :presentations
-
   resources :courses
-
   resources :slides
-
   resources :slidedecks
 
   get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+  #
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,9 +1,9 @@
-  <%#<div class="linkbar">%>
-    <%#<%= link_to "&lt;&lt; Earlier", {:date => (@period_start - 7)}, :class => "last_week" %>%>
-    <%#<%= link_to "Later &gt;&gt;",   {:date => (@period_start + 7)}, :class => "next_week" %>%>
-  <%#</div>%>
+  <div class="linkbar">
+    <%= link_to "<< Earlier", {:slidenumber => (@slidenumber - 1)}, :class => "last_slide" %>
+    <%= link_to "Later >>",   {:slidenumber => (@slidenumber + 1)}, :class => "next_slide" %>
+  </div>
 <div id="notice"><%= notice %></div>
-
+lolol
 <table border="1" style="border-style:solid">
 <tr>
   <td>
