@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+  <div id="<%=@slide.id%>" style="float:left; width:100%; height:600px">
+    <div class="colslide "style="float:left;">
+      <%= image_tag @slide.image.url, :width => "100%"%>
+    </div>
+   <div class="colnote" style="float:left; width:450px; height:100%">
+      <div id="<%=@slide.id%>" style="float:right; width:100%; height:100%"></div>
+   </div>
+  </div>
+
+	<script type="text/javascript">
+    $('#<%=@slide.id%>').pad({'padId':'<%=@slide.id%>','width':'100%','height':'100%','showControls':true});
+  </script>
 
 <%= link_to 'Edit', edit_presentation_path(@presentation) %> |
 <%= link_to 'Back', presentations_path %>

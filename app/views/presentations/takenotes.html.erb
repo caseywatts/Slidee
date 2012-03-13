@@ -4,31 +4,13 @@
   </div>
 <div id="notice"><%= notice %></div>
 
-<div id="container" style="float:left; width:100%; height:600px">
-  <div id="colslide "style="float:left;">
-    <%= image_tag @slide.image.url, :width => "100%"%>
-  </div>
-  <div id="colnote" style="float:left; width:450px; height:100%">
-  	<div id="examplePadBasic" style="float:right; width:100%; height:100%"></div>
-  </div>
-</div>
+      <%= render :partial => "presentations/slidewithnote", :collection => @presentation.slides %>
+      <%#<%= render :partial => "presentations/slidewithnotejs", :collection => @presentation.slides %>%>
 
-<%#<table border="1" style="border-style:solid">%>
-<%#<tr>%>
-  <%#<td>%>
-    <%#<div>%>
-    <%#</div>%>
-  <%#</td>%>
-  
-  <%#<td width="50%">%>
-  <%#</td>%>
-<%#</tr>%>
-<%#</table>%>
 
-<%=@pad.id%>
 <%= link_to 'Edit', edit_slide_path(@slide) %> |
 <%= link_to 'Back', slides_path %>
 
 	<script type="text/javascript">
-    $('#examplePadBasic').pad({'padId':'<%=@pad.id%>','width':'100%','height':'100%','showControls':true});
+    $('#<%=@pad.id%>').pad({'padId':'<%=@pad.id%>','width':'100%','height':'100%','showControls':true});
   </script>
