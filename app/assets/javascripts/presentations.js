@@ -19,84 +19,59 @@ $(document).ready(function() {
 // Next Slide //
 function nextslide() {
     //make current slide go away (to left)
-    $('#container').children(".boxcenter").animate({ //current slide
-      left: '-150%'},
-      500,
-      function() {
-        $(this).addClass("boxleft");
-        $(this).removeClass("boxcenter");
-        $(this).removeClass("boxright"); //redundant, but safe
-      }
-    );
+    makeleft($('#container').children(".boxcenter"));
     //make the next slide appear (from right)
-    $('#container').children(".boxright").first().animate({ //wanted slide
-      left: '0%'},
-      500,
-      function() {
-        $(this).addClass("boxcenter");
-        $(this).removeClass("boxleft");
-        $(this).removeClass("boxright");
-      }
-    );
+    makecenter($('#container').children(".boxright").first());
+
 }
 
 // Previous Slide //
 function previousslide(){
     //make current one go away (to right)
-    $('#container').children(".boxcenter").animate({ //current slide
-      left: '+150%'},
-      500,
-      function() {
-        $(this).addClass("boxright");
-        $(this).removeClass("boxleft");
-        $(this).removeClass("boxcenter");
-      }
-    );
+    makeright($('#container').children(".boxcenter"));
     //make the last one appear (from left)
-    $('#container').children(".boxleft").last().animate({ //wanted slide
-      left: '0%'},
-      500,
-      function() {
-        $(this).addClass("boxcenter");
-        $(this).removeClass("boxleft");
-        $(this).removeClass("boxright");
-      }
-    );
+    makecenter($('#container').children(".boxleft").last());
 }
 
-function makecenter(){
-  $(this).addClass("boxcenter");
-  $(this).removeClass("boxleft");
-  $(this).removeClass("boxright");
+function makecenter(x){
+  x.addClass("boxcenter");
+  x.removeClass("boxleft");
+  x.removeClass("boxright");
+  x.animate({
+    left: '0%'}, 500);
 }
-function makeright(){
-  $(this).addClass("boxright");
-  $(this).removeClass("boxleft");
-  $(this).removeClass("boxcenter");
+function makeright(x){
+  x.addClass("boxright");
+  x.removeClass("boxleft");
+  x.removeClass("boxcenter");
+  x.animate({
+    left: '150%'}, 500);
 }
-function makeleft(){
-  $(this).addClass("boxleft");
-  $(this).removeClass("boxcenter");
-  $(this).removeClass("boxright");
+function makeleft(x){
+  x.addClass("boxleft");
+  x.removeClass("boxcenter");
+  x.removeClass("boxright");
+  x.animate({
+    left: '-150%'}, 500);
 }
 
 //// MOUSE ENACTED SHORTCUTS ////
 
-//CLICKING on the slide progresses it forward (we may want to remove this specific functionality~)
-  $('.box').click(function() {
-      $(this).animate({
-         left: '-50%'
+////CLICKING on the slide progresses it forward (we may want to remove this specific functionality~)
+  //$('.box').click(function() {
+      //$(this).animate({
+         //left: '-50%'
 
-      }, 500, function() {
-         $(this).css('left', '150%');
-         //we'll want to change class to "current slide" and remove it from the others
-         $(this).appendTo('#container');
-      });
+      //}, 500, function() {
+         //$(this).css('left', '150%');
+         ////we'll want to change class to "current slide" and remove it from the others
+         //$(this).appendTo('#container');
+      //});
 
-     $(this).next().animate({
-         left: '0%'
-     }, 500);
-  });
+     //$(this).next().animate({
+         //left: '0%'
+     //}, 500);
+  //});
 
 
 
