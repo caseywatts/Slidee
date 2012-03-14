@@ -22,7 +22,6 @@ function nextslide() {
     makeleft($('#container').children(".boxcenter"));
     //make the next slide appear (from right)
     makecenter($('#container').children(".boxright").first());
-
 }
 
 // Previous Slide //
@@ -38,21 +37,21 @@ function makecenter(x){
   x.removeClass("boxleft");
   x.removeClass("boxright");
   x.animate({
-    left: '0%'}, 500);
+    left: '0%'}, 200);
 }
 function makeright(x){
   x.addClass("boxright");
   x.removeClass("boxleft");//unnecessary
   x.removeClass("boxcenter");
   x.animate({
-    left: '150%'}, 500);
+    left: '150%'}, 200);
 }
 function makeleft(x){
   x.addClass("boxleft");
   x.removeClass("boxcenter");
   x.removeClass("boxright");//unnecessary
   x.animate({
-    left: '-150%'}, 500);
+    left: '-150%'}, 200);
 }
 
 //// MOUSE ENACTED SHORTCUTS ////
