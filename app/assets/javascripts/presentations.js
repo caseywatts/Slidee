@@ -42,7 +42,7 @@ function makecenter(x){
 }
 function makeright(x){
   x.addClass("boxright");
-  x.removeClass("boxleft");
+  x.removeClass("boxleft");//unnecessary
   x.removeClass("boxcenter");
   x.animate({
     left: '150%'}, 500);
@@ -50,7 +50,7 @@ function makeright(x){
 function makeleft(x){
   x.addClass("boxleft");
   x.removeClass("boxcenter");
-  x.removeClass("boxright");
+  x.removeClass("boxright");//unnecessary
   x.animate({
     left: '-150%'}, 500);
 }
