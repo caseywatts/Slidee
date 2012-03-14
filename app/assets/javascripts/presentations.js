@@ -18,18 +18,22 @@ $(document).ready(function() {
 
 // Next Slide //
 function nextslide() {
+  if ($('#container').children(".boxright").length){
     //make current slide go away (to left)
     makeleft($('#container').children(".boxcenter"));
     //make the next slide appear (from right)
     makecenter($('#container').children(".boxright").first());
+  }
 }
 
 // Previous Slide //
 function previousslide(){
+  if ($('#container').children(".boxleft").length){
     //make current one go away (to right)
     makeright($('#container').children(".boxcenter"));
     //make the last one appear (from left)
     makecenter($('#container').children(".boxleft").last());
+  }
 }
 
 function makecenter(x){
