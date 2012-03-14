@@ -4,8 +4,10 @@
 
 
 // Make the first slide visible (they're all off the the right side at left:150%)
-$(document).ready(function(){
-  $('#container').children().first().css('left', '0%')
+$(document).ready(function() {
+  $('#container').children().first().addClass("boxcenter");
+  $('#container').children().first().removeClass("boxleft");
+  $('#container').children().first().removeClass("boxright");
 });
 
 
@@ -16,41 +18,66 @@ $(document).ready(function(){
 // Next Slide //
 function nextslide() {
     //make current slide go away (to left)
-    $('#container').children().first().animate({ //current slide
-      left: '-50%'},
+    $('#container').children(".boxcenter").animate({ //current slide
+      left: '-150%'},
       500,
       function() {
-        $(this).css('left', '-150%');
-        $(this).appendTo('#container');
+        $(this).addClass("boxleft");
+        $(this).removeClass("boxcenter");
+        $(this).removeClass("boxright"); //redundant, but safe
       }
     );
     //make the next slide appear (from right)
-    $('#container').children().first().next().animate({ //wanted slide
+    $('#container').children(".boxright").first().animate({ //wanted slide
       left: '0%'},
-      500);
+      500,
+      function() {
+        $(this).addClass("boxcenter");
+        $(this).removeClass("boxleft");
+        $(this).removeClass("boxright");
+      }
+    );
 }
 
 // Previous Slide //
 function previousslide(){
     //make current one go away (to right)
-    $('#container').children().first().animate({ //current slide
-      left: '+50%'},
+    $('#container').children(".boxcenter").animate({ //current slide
+      left: '+150%'},
       500,
       function() {
-        $(this).css('left', '150%');
+        $(this).addClass("boxright");
+        $(this).removeClass("boxleft");
+        $(this).removeClass("boxcenter");
       }
     );
     //make the last one appear (from left)
-    $('#container').children().last().animate({ //wanted slide
+    $('#container').children(".boxleft").last().animate({ //wanted slide
       left: '0%'},
       500,
       function() {
-        $(this).prependTo('#container');
+        $(this).addClass("boxcenter");
+        $(this).removeClass("boxleft");
+        $(this).removeClass("boxright");
       }
     );
 }
 
-
+function makecenter(){
+  $(this).addClass("boxcenter");
+  $(this).removeClass("boxleft");
+  $(this).removeClass("boxright");
+}
+function makeright(){
+  $(this).addClass("boxright");
+  $(this).removeClass("boxleft");
+  $(this).removeClass("boxcenter");
+}
+function makeleft(){
+  $(this).addClass("boxleft");
+  $(this).removeClass("boxcenter");
+  $(this).removeClass("boxright");
+}
 
 //// MOUSE ENACTED SHORTCUTS ////
 
