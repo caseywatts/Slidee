@@ -6,6 +6,7 @@
 // Make the first slide visible (they're all off the the right side at left:150%)
 $(document).ready(function() {
   $('#container').children().first().addClass("boxcenter");
+  $('#container').children().first().css('left','0%');
   $('#container').children().first().removeClass("boxleft");
   $('#container').children().first().removeClass("boxright");
 });

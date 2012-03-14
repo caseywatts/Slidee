@@ -5,7 +5,7 @@
       'host'		 : 'http://beta.etherpad.org',
       'baseUrl'		 : '/p/',
       'showControls'     : false,
-      'showChat'	 : false,
+      'showChat'	 : true,
       'showLineNumbers'  : false,
       'userName'	 : 'unnamed',
       'useMonospaceFont' : false,
