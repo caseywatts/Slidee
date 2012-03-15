@@ -4,11 +4,9 @@ LFS::Application.routes.draw do
   match 'presentations/:id' => 'presentations#takenotes' #, :as => :takenotes
 
   resources :users
-  resources :slideimages
   resources :presentations
   resources :courses
   resources :slides
-  resources :slidedecks
 
   get "home/index"
 
