@@ -84,35 +84,47 @@ function makeleft(x){
 //Original example taken from http://www.catswhocode.com/blog/using-keyboard-shortcuts-in-javascript (thanks!)
 
 
-// PGUP AND PGDN //
-//move the presentation forward & backward
-//TODO: one thing that can break: pressing the buttons fast. The appendTo shouldn't be after 500ms.
+
+// Removing Browser Function of keystrokes //
+// I don't know why we need both of these methods, but when I take one out, the browser gets the keystroke :/
+window.onkeydown=function(e){
+  if(e.keyCode==33){return false;}
+};
+window.onkeydown=function(e){
+  if(e.keyCode==34){return false;}
+};
+window.addEventListener('keypress',function(e){if(e.keyCode==33){e.preventDefault();}},true);
+window.addEventListener('keypress',function(e){if(e.keyCode==34){e.preventDefault();}},true);
+
+
+// Moving forward & backward //
 $(document).keyup(function (e) {
   if(e.keyCode == 34) nextslide(); //pagedown
   if(e.keyCode == 33) previousslide(); //pageup
+  return false;
 });
 
 
 // Alt + n  => notes tab //
-// Replace "17" with the alt number
-// Replace "83" with n or q
+// Alt + q  => questions tab //
+
 var isAlt = false;$(document).keyup(function (e) {
-if(e.which == 17) isAlt=false;
+if(e.which == 18) isAlt=false;
 }).keydown(function (e) {
-    if(e.which == 17) isAlt=true;
-    if(e.which == 83 && isAlt == true) {
-      alert('Keyboard shortcuts + JQuery are even more cool!');
+    if(e.which == 18) isAlt=true;
+    if(e.which == 78 && isAlt == true) { // 78 is n
+      alert('alt+n');
       return false;
     }
-    if(e.which == 85 && isAlt == true) {
-      alert('Keyboard shortcuts + JQuery are even more cool!');
+    if(e.which == 81 && isAlt == true) { // 81 is q
+      alert('alt+q');
       return false;
     }
 });
 
 //// Alt + q  => questions tab //
 //var isAlt = false;$(document).keyup(function (e) {
-//if(e.which == 17) isAlt=false;
+//if(e.which == 18) isAlt=false;
 //}).keydown(function (e) {
     //if(e.which == 17) isAlt=true;
     //if(e.which == 83 && isAlt == true) {
