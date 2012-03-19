@@ -125,6 +125,7 @@ if(e.which == 18) isAlt=false;
 
 ////Experimental code to watch pads for keystrokes
 // from http://www.dyn-web.com/tutorials/iframes/refs.php
+// and also from http://www.sitepoint.com/forums/showthread.php?520317-iframe-event-capturing
 //document.getElementById('etherpadnote167').contentDocument.addEventListener("keyup", nextslide, false);
 
 //$(".etherpadnote")
