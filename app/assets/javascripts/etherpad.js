@@ -2,7 +2,7 @@
 
   $.fn.pad = function( options ) {
     var settings = {
-      'host'		 : 'http://beta.etherpad.org',
+      'host'		 : 'etherpad-local.com:9001',
       'baseUrl'		 : '/p/',
       'showControls'     : false,
       'showChat'	 : true,
@@ -23,7 +23,7 @@
         $.extend( settings, options );
       }
       var epframe = this.attr('id');
-      var iFrameLink = '<iframe id="epframe'+epframe+'" src="'+settings.host+settings.baseUrl+settings.padId+'?showControls='+settings.showControls+'&showChat='+settings.showChat+'&showLineNumbers='+settings.showLineNumbers+'&useMonospaceFont='+settings.useMonospaceFont+'&userName=' + settings.userName + '&noColors=' + settings.noColors + '&hideQRCode=' + settings.hideQRCode + '" style="border: 0; width: '+settings.width+'; height: '+settings.height+';"></iframe>';
+      var iFrameLink = '<iframe id="epframe'+epframe+'" src="http://'+settings.host+settings.baseUrl+settings.padId+'?showControls='+settings.showControls+'&showChat='+settings.showChat+'&showLineNumbers='+settings.showLineNumbers+'&useMonospaceFont='+settings.useMonospaceFont+'&userName=' + settings.userName + '&noColors=' + settings.noColors + '&hideQRCode=' + settings.hideQRCode + '" style="border: 0; width: '+settings.width+'; height: '+settings.height+';"></iframe>';
       // console.log(iFrameLink);
       this.html(iFrameLink);
     }
