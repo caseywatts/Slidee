@@ -122,6 +122,28 @@ if(e.which == 18) isAlt=false;
     }
 });
 
+
+////Experimental code to watch pads for keystrokes
+//document.getElementById('etherpadnote167').contentDocument.addEventListener("keyup", nextslide, false);
+
+//$(".etherpadnote")
+//document.getElementById('etherpadnote167').contentWindow
+
+//var iFrm = document.getElementByClass();
+
+//iFrm.contentWindow.document.body.innerHTML = "myText";
+//if(iFrm.contentDocument) {
+        //iFrm.contentDocument.addEventListener("keyup", nextslide, false);
+        //iFrm.contentDocument.designMode = "on";
+        //iFrm.contentWindow.focus();
+//} else {
+        //iFrm.contentWindow.document.body.attachEvent("onkeyup", callBack);
+        //iFrm.contentWindow.document.body.contentEditable = true;
+        //iFrm.contentWindow.document.body.focus();
+//}
+
+
+
 //// Alt + q  => questions tab //
 //var isAlt = false;$(document).keyup(function (e) {
 //if(e.which == 18) isAlt=false;

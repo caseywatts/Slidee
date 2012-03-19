@@ -3,6 +3,8 @@
     <%= image_tag slidewithnote.image.url, :width => "100%"%>
   </div>
   <div class="colnote">
-    <div id="note<%=slidewithnote.id%>" style="float:right; width:100%; height:100%"></div>
+    <div id="note<%=slidewithnote.id%>" style="float:right; width:100%; height:100%">
+   <iframe class="etherpadnote" id="etherpadnote<%=slidewithnote.id%>" src="http://beta.etherpad.org/p/LectureTogetherNote<%=slidewithnote.id%>?showControls=true&amp;showChat=true&amp;showLineNumbers=false&amp;useMonospaceFont=false&amp;userName=caseywatts&amp;noColors=false&amp;hideQRCode=false" style="border: 0; width: 100%; height: 100%;"></iframe> 
+    </div>
   </div>
 </div>
