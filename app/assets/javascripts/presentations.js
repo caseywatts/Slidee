@@ -101,6 +101,8 @@ window.addEventListener('keypress',function(e){if(e.keyCode==34){e.preventDefaul
 $(document).keyup(function (e) {
   if(e.keyCode == 34) nextslide(); //pagedown
   if(e.keyCode == 33) previousslide(); //pageup
+  if(e.keyCode == 37) previousslide(); //leftarrowkey
+  if(e.keyCode == 39) nextslide(); //rightarrowkey
   return false;
 });
 
@@ -122,19 +124,19 @@ if(e.which == 18) isAlt=false;
     }
 });
 
-var isCtrl = false;$(document).keyup(function (e) {
-if(e.which == 17) isCtrl=false;
-}).keydown(function (e) {
-    if(e.which == 17) isCtrl=true;
-    if(e.which == 37 && isCtrl == true) { // 37 is leftarrow
-      previousslide();
-      return false;
-    }
-    if(e.which == 39 && isCtrl == true) { // 39 is rightarrow
-      nextslide();
-      return false;
-    }
-});
+//var isCtrl = false;$(document).keyup(function (e) {
+//if(e.which == 17) isCtrl=false;
+//}).keydown(function (e) {
+    //if(e.which == 17) isCtrl=true;
+    //if(e.which == 37 && isCtrl == true) { // 37 is leftarrow
+      //previousslide();
+      //return false;
+    //}
+    //if(e.which == 39 && isCtrl == true) { // 39 is rightarrow
+      //nextslide();
+      //return false;
+    //}
+//});
 ////Experimental code to watch pads for keystrokes
 // from http://www.dyn-web.com/tutorials/iframes/refs.php
 // and also from http://www.sitepoint.com/forums/showthread.php?520317-iframe-event-capturing
