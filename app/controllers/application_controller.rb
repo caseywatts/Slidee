@@ -3,17 +3,26 @@ class ApplicationController < ActionController::Base
   #include Magick
   before_filter RubyCAS::Filter
   #before_filter :login_check #, :except => :access_denied
-
+  before_filter :current_user
+  helper_method :current_user
+  helper_method :logout_user
 
   protected
   def current_user
     @current_user ||= (
-    if @user_session #we don't use this, but I just didn't take it out~
-      @user_session.user
-    elsif session[:cas_user]
-      User.find_by_login(session[:cas_user])
+    if session[:cas_user]
+      if User.find_by_login(session[:cas_user])
+        User.find_by_login(session[:cas_user])
+      else
+        User.create(:login => session[:cas_user])
+      end
     else
       nil
     end)
   end
+
+  def logout_user
+    RubyCAS::Filter.logout(self)
+  end
+
 end
