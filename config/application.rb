@@ -11,7 +11,7 @@ end
 
 
 
-module LFS
+module Lecture_Together
   class Application < Rails::Application
     config.rubycas.cas_base_url = "https://secure.its.yale.edu/cas/"
     config.rubycas.username_session_key = :cas_user

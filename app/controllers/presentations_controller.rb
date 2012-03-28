@@ -49,7 +49,7 @@ class PresentationsController < ApplicationController
     
     respond_to do |format|
       if @presentation #.save
-        format.html { redirect_to @notegroup, :notice => 'Presentation was successfully created.' }
+        format.html { redirect_to @notegroup }#, :notice => 'Presentation was successfully created.'
         format.json { render :json => @notegroup, :status => :created, :location => @notegroup }
       else
         format.html { render :action => "new" }

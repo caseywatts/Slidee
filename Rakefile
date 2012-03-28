@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-LFS::Application.load_tasks
+Lecture_Together::Application.load_tasks

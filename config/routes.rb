@@ -1,4 +1,4 @@
-LFS::Application.routes.draw do
+Lecture_Together::Application.routes.draw do
 
   resources :notegroups
 
