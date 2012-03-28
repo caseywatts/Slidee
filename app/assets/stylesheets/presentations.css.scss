@@ -1,8 +1,34 @@
 // Place all the styles related to the Presentations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*.loadingonstandby {*/
+    /*position:absolute;*/
+    /*width:300px;*/
+    /*top:200px;*/
+    /*left:50%;*/
+    /*margin-left:-150px;*/
+    /*text-align:center;*/
+    /*padding:7px 0 0 0;*/
+    /*font:bold 11px Arial, Helvetica, sans-serif;*/
+/*}*/
+.loadinginprogress {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 50%; /* Center the spinner inside the element */
+    background-color: #ccc; /* Choose whatever color you wish */
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter: alpha(opacity=50);
+    background-repeat: no-repeat; /* thanks to Marthin for pointing this out */
+    visibility: hidden;
+    display: none;
+}
 
-#container {
+
+ #container {
     position: absolute;
     margin: 0px;
     padding: 0px;

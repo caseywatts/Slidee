@@ -47,21 +47,13 @@ class PresentationsController < ApplicationController
     @notegroup = Notegroup.new(:presentation => @presentation)
     @presentation.notegroups << @notegroup
     
-    #Join a group?
-    #@presentation.join_pads(user) #this doesn't work yet~ TODO
-    #etc
-    #
-
-    #Go solo!
-    #@presentation.create_pads(user) #this doesn't work yet~ TODO
-      
     respond_to do |format|
       if @presentation #.save
-        format.html { redirect_to @presentation, :notice => 'Presentation was successfully created.' }
-        format.json { render :json => @presentation, :status => :created, :location => @presentation }
+        format.html { redirect_to @notegroup, :notice => 'Presentation was successfully created.' }
+        format.json { render :json => @notegroup, :status => :created, :location => @notegroup }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @presentation.errors, :status => :unprocessable_entity }
+        format.json { render :json => @notegroup.errors, :status => :unprocessable_entity }
       end
     end
   end

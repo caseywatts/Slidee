@@ -16,6 +16,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :onclick => "this.disabled=true; showMe('loading');" %>
   </div>
+  
+ <div id="loading" class="loadinginprogress">
+   <%= image_tag "ajax-loader.gif" %>
+ </div>
 <% end %>

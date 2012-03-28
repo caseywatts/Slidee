@@ -2,6 +2,13 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+//#For loading bar
+function showMe(id) {
+  var elem = document.getElementById(id);
+  elem.style.visibility = "visible";
+  elem.style.display = "block";
+}
+
 
 // Make the first slide visible (they're all off the the right side at left:150%)
 $(document).ready(function() {
