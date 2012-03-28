@@ -1,23 +1,4 @@
-<table border="1" style="border-style:solid">
-<tr>
-  <td>
-    <div>
-      <%=image_tag("Pantheon1.png")%>
-    </div>
-  </td>
-  
-  <td width="50%">
-	<div id="examplePadBasic" height="100%" style="height:100%"></div>
-  </td>
-</tr>
-</table>
-
-<div class="etherpad_document" style="border:1" height="100%">
-<%#<%= @pad.text %>%>
-</div>
 
 
-	<script type="text/javascript">
-        // The most basic example
-	$('#examplePadBasic').pad({'padId':'pantheon','width':'100%','height':'600px','showControls':true}); // sets the pad id and puts the pad in the div
-</script>
+
+<%= link_to 'New Presentation', new_presentation_path %>
