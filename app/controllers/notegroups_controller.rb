@@ -41,7 +41,7 @@ class NotegroupsController < ApplicationController
   # POST /notegroups.json
   def create
     @notegroup = Notegroup.new(params[:notegroup])
-
+    @notegroup.users << current_user
     respond_to do |format|
       if @notegroup.save
         format.html { redirect_to @notegroup, :notice => 'Notegroup was successfully created.' }
