@@ -43,6 +43,7 @@ class PresentationsController < ApplicationController
     @presentation = Presentation.new(params[:presentation])
     @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
     @presentation.create_slides
+
     @notegroup = Notegroup.new(:presentation => @presentation)
     @presentation.notegroups << @notegroup
     

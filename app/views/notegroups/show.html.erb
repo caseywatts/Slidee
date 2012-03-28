@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_notegroup_path(@notegroup) %> |
-<%= link_to 'Back', notegroups_path %>
+<div id="notice"><%= notice %></div>
+<%#<input type="button" value="Next Slide" onClick="nextslide();">%>
+<%#<input type="button" value="Previous Slide" onClick="previousslide();">%>
+<div id="container">
+  <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
+</div>
