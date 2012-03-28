@@ -10,11 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313024614) do
+ActiveRecord::Schema.define(:version => 20120328200746) do
 
   create_table "courses", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "notegroups", :force => true do |t|
+    t.integer  "presentation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notegroups_users", :id => false, :force => true do |t|
+    t.integer "notegroup_id"
+    t.integer "user_id"
   end
 
   create_table "presentations", :force => true do |t|

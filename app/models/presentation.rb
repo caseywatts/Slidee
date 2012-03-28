@@ -1,8 +1,10 @@
 class Presentation < ActiveRecord::Base
   belongs_to :course
+  has_one :slidedeck
+
   has_many :slides, :dependent => :destroy
   has_many :users
-  has_one :slidedeck
+  has_many:notegroups
   #has_attached_file :deck #we'll have to convert some deckoriginals to pdf first, we'll use this later
   has_attached_file :deckoriginal
   #after_deckoriginal_post_process :make_pages

@@ -1,5 +1,7 @@
 LFS::Application.routes.draw do
 
+  resources :notegroups
+
   match 'presentations/new' => 'presentations#new' #, :as => :takenotes
   match 'presentations/:id' => 'presentations#takenotes' #, :as => :takenotes
 
@@ -7,6 +9,7 @@ LFS::Application.routes.draw do
   resources :presentations
   resources :courses
   resources :slides
+  resources :notegroup
 
   get "home/index"
 
