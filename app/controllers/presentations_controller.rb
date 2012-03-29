@@ -41,14 +41,13 @@ class PresentationsController < ApplicationController
   # POST /presentations.json
   def create
     @presentation = Presentation.new(params[:presentation])
-    @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
-    @presentation.create_slides
-
-    @notegroup = Notegroup.new(:presentation => @presentation)
-    @presentation.notegroups << @notegroup
     
     respond_to do |format|
-      if @presentation #.save
+      if @presentation.save
+        @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
+        @presentation.create_slides
+        @notegroup = Notegroup.new(:presentation => @presentation)
+        @presentation.notegroups << @notegroup
         format.html { redirect_to @notegroup }#, :notice => 'Presentation was successfully created.'
         format.json { render :json => @notegroup, :status => :created, :location => @notegroup }
       else

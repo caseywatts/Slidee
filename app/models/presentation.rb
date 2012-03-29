@@ -1,16 +1,22 @@
 class Presentation < ActiveRecord::Base
+  require 'RMagick'
+  include Magick
+
   belongs_to :course
   has_one :slidedeck
 
   has_many :slides, :dependent => :destroy
   has_many :users
-  has_many:notegroups
+  has_many :notegroups
   #has_attached_file :deck #we'll have to convert some deckoriginals to pdf first, we'll use this later
-  has_attached_file :deckoriginal
-  #after_deckoriginal_post_process :make_pages
+  has_attached_file :deckoriginal,  :content_type => 'application/pdf'
+  #validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf'], :if => deckoriginal_attached?
+  #after_deckoriginal_post_process :create_slides
+  #validates :deckoriginal, :attachment_presence => true
+  validates_attachment_presence :deckoriginal
+  validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf']
 
-  require 'RMagick'
-  include Magick
+
 
 
 
