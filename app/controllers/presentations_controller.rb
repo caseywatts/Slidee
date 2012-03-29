@@ -48,6 +48,7 @@ class PresentationsController < ApplicationController
         @presentation.create_slides
         @notegroup = Notegroup.new(:presentation => @presentation)
         @presentation.notegroups << @notegroup
+        current_user.notegroups << @notegroup
         format.html { redirect_to @notegroup }#, :notice => 'Presentation was successfully created.'
         format.json { render :json => @notegroup, :status => :created, :location => @notegroup }
       else
