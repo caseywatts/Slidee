@@ -1,6 +1,6 @@
 <h1>Editing notegroup</h1>
 
-Users In This Notegroup</br>
+All Users In This Notegroup</br>
 <%= @notegroup.users.collect{|user| user.login}%>
 <%= render 'form' %>
 
