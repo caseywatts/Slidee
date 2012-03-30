@@ -35,7 +35,7 @@ class NotegroupsController < ApplicationController
   # GET /notegroups/1/edit
   def edit
     @notegroup = Notegroup.find(params[:id])
-    @users = User.all.collect{|user| user.login}
+    @users = User.all.collect{|user| user.login} - @notegroup.users.collect{|user| user.login}
   end
 
   # POST /notegroups
