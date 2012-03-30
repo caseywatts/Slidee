@@ -1,17 +1,18 @@
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<div>
 <% current_user.notegroups.each do |notegroup| %>
-  <tr>
-    <td><%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %></td>
-  </tr>
+  <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %></br>
 <% end %>
-</table>
+</div>
 
 
+</br></br>
 
+<div>
 <%= link_to 'New Presentation', new_presentation_path %>
+</div>
+
+</br></br>
+<div>
+  Or ask a friend to add you to their presentation
+</div>
