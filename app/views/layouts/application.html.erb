@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <%#<div id="pagebox">%>
+<div id="pagebox">
     <div id = "page_header" style="background:#DEFFDE; display:block; font-size:large; font-color:black; width:100%; height:40px">
       Collaborative Powerpoint Note-Taking
       <%= render :partial => "layouts/include/login" %>
@@ -19,8 +19,10 @@
 
     <div id="link_bar">
     </div>
-
-<%= yield %>
+    <div id="content">
+    <%= yield %>
+    </div>
+</div>
 
 </body>
 </html>
