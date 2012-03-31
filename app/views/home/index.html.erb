@@ -1,6 +1,6 @@
 <div class="narrowcontent">
 
-  <h1>My Presentations</h1>
+  <h2>My Slides</h2>
   <div>
 <% current_user.notegroups.each do |notegroup| %>
   <div class="item">
@@ -15,7 +15,8 @@
 </br></br>
 
 <div class="item">
-  <li><%= link_to 'New Presentation', new_presentation_path %></li>
+  <%= button_to "+ Add Slide", new_presentation_path, :method => "get", :class => "roundedcorners greenbutton"%>
+  <%= button_to "x Delete", new_presentation_path, :method => "get", :class => "roundedcorners redbutton"%>
 </div>
 
 </br></br>

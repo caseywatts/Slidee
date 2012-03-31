@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lecture Together</title>
+  <title>Slidee</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
 <div id="pagebox">
-    <div id = "page_header" style="background:#DEFFDE; display:block; font-size:large; font-color:black; width:100%; height:40px">
-      Collaborative Powerpoint Note-Taking
-      <%= link_to 'My Presentations', home_path %>
+    <div id = "page_header" class="headerbar">
+      <div class="leftheader">
+      <%= link_to 'Slidee', home_path %>
+      </div>
       <%= render :partial => "layouts/include/login" %>
     </div>
 
