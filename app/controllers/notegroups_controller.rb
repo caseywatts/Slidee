@@ -62,7 +62,7 @@ class NotegroupsController < ApplicationController
 
     respond_to do |format|
       if @notegroup.update_attributes(params[:notegroup])
-        format.html { redirect_to @notegroup, :notice => 'Notegroup was successfully updated.' }
+        format.html { redirect_to(:action => "edit", :notice => 'Notegroup was successfully updated.') }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

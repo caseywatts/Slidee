@@ -1,3 +1,6 @@
+<h3>Invite a Friend</h3>
+<div class="subsection">
+
 <%= form_for(@notegroup) do |f| %>
   <% if @notegroup.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +14,12 @@
     </div>
   <% end %>
 
-  </br></br>
-  <h3>Invite a Friend</h3>
+
   <%#= f.select :users_to_add, options_for_select(@users),{},{ :multiple => true, :size => 10 }%>
   <%= f.select :users_to_add, options_for_select(@users),{:prompt => "Friends"},{}%>
 
   <div class="actions">
-    <%= f.submit "Add", :class => "roundedcorners orangebutton"%>
+    <%= f.submit "Add", :class => "roundedcornersbutton orangebutton"%>
   </div>
 <% end %>
+</div>

@@ -1,21 +1,38 @@
-<h1>Listing presentations</h1>
+<div class="narrowcontentleft">
+  <h3>My Slides</h3>
+  <div>
+    <% current_user.notegroups.each do |notegroup| %>
+      <div class="item">
+        <%=image_tag("noun_project_453.svg", :size => "16x10")%>
+        <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
+        <div class="friendlist">
+          <% notegroup.everyonebutme.each do |user|%>
+            <%= user.login %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  </br></br>
 
-<% @presentations.each do |presentation| %>
-  <tr>
-    <td><%= link_to 'Show', presentation %></td>
-    <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
-    <td><%= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <div style="float:left; padding: 0px 5px;">
+    <%= button_to "+ Add Slide", new_presentation_path, :method => "get", :class => "roundedcornersbutton greenbutton"%>
+  </div>
+  <div style="float:left; padding: 0px 5px;">
+    <%= button_to "x Delete", new_presentation_path, :method => "get", :class => "roundedcornersbutton redbutton"%>
+  </div>
+</div>
 
-<br />
+<div class="narrowcontentright roundedcornersbox">
+  Upload a presentation PDF and invite some friends to take notes with you - in real time!</br></br>
+  Or ask a friend to add you to their presentation.</br></br>
+  The best size for a notetaking group is usually 2-3 people, depending on the class.</br>
+</div>
 
-<%= link_to 'New Presentation', new_presentation_path %>
+
+
+  <div class="page_footer">
+    <p style="font-size:10px;">Slidee is a project by Casey Watts! Please send feedback and bugs to: casey.watts@yale.edu</p>
+  </div>
+

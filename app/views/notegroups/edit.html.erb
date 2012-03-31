@@ -1,18 +1,17 @@
 <div class="narrowcontentleft">
-  <%= button_to "Return to Notetaking", @notegroup, :method => "get", :class => "roundedcorners orangebutton"%>
+  <%= button_to "Return to Notetaking", @notegroup, :method => "get", :class => "roundedcornersbutton orangebutton"%>
   </br> 
 
   <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
-  
-  </br>
-  <% raise everyonebutme.to_yaml%>
-  <%@notegroup.users.collect{|user| user.login}.each do |a| %>
-    <%if (a != current_user.login)%>
-      <%= a %></br>
-    <%end%>
-  <%end%>
-  <%= render 'form' %>
-  
+
+        <div class="subsection">
+          <% @notegroup.everyonebutme.each do |user|%>
+            <li><%= user.login %></li>
+          <% end %>
+        </div>
+
+          <%= render 'form' %>
+
   
 </div>
 

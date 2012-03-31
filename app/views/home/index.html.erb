@@ -1,36 +1,15 @@
 <div class="narrowcontentleft">
-  <h3>My Slides</h3>
-  <div>
-    <% current_user.notegroups.each do |notegroup| %>
-      <div class="item">
-        <%=image_tag("noun_project_453.svg", :size => "16x10")%>
-        <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
-        <div class="friendlist">
-          <% notegroup.everyonebutme.each do |user|%>
-            <%= user.login %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  </br></br>
-
-  <div style="float:left; padding: 0px 5px;">
-    <%= button_to "+ Add Slide", new_presentation_path, :method => "get", :class => "roundedcorners greenbutton"%>
-  </div>
-  <div style="float:left; padding: 0px 5px;">
-    <%= button_to "x Delete", new_presentation_path, :method => "get", :class => "roundedcorners redbutton"%>
-  </div>
+  <h2 class="titlefont">Slidee</h2>
+  <h3 class="titlesubheader">is a collaborative slide-based note-taking tool.</h3>
+  </br>
+  <%= button_to "My Slides", presentations_path, :method => "get", :class => "roundedcornersbuttonbig orangebutton"%>
 </div>
 
-<div class="narrowcontentright roundedcornersbox">
-  Upload a presentation PDF and invite some friends to take notes with you - in real time!</br></br>
+<div class="narrowcontentright roundedcornersbox>">
+    Upload a presentation PDF and invite some friends to take notes with you - in real time!</br></br>
   Or ask a friend to add you to their presentation.</br></br>
   The best size for a notetaking group is usually 2-3 people, depending on the class.</br>
 </div>
-
-
 
   <div class="page_footer">
     <p style="font-size:10px;">Slidee is a project by Casey Watts! Please send feedback and bugs to: casey.watts@yale.edu</p>
