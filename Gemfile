@@ -5,8 +5,6 @@ gem 'rails', '3.1.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-
 gem 'json'
 
 # Gems used only for assets and not required
@@ -42,3 +40,20 @@ gem 'rubycas-client', "2.2.1" #bug https://github.com/rubycas/rubycas-client-rai
 gem 'rubycas-client-rails'
 gem 'ruby-prof'
 
+   # If you use a different database in development, hide it from Cloud Foundry.
+   group :development do
+     gem 'pg'
+   end
+
+   # Rails 3.1 can use the latest mysql2 gem.
+   group :production do
+     gem 'mysql2'
+   end
+
+   # For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
+   # gem 'jquery-rails'
+   gem 'cloudfoundry-jquery-rails'
+
+   # For Ruby 1.9 Cloud Foundry requires a tweak to devise.
+   # Uncomment next line if you plan to use devise.
+   # gem 'cloudfoundry-devise', :require => 'devise'
