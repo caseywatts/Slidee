@@ -3,7 +3,9 @@
   
   </br>
   <%@notegroup.users.collect{|user| user.login}.each do |a| %>
-    <%= a%></br>
+    <%#<%=if (a != current_user.login)%>%>
+      <%#<%= a %></br>%>
+    <%#<%=end%>%>
   <%end%>
   <%= render 'form' %>
   
