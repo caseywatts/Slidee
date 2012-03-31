@@ -5,6 +5,7 @@
   <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
   
   </br>
+  <% raise everyonebutme.to_yaml%>
   <%@notegroup.users.collect{|user| user.login}.each do |a| %>
     <%if (a != current_user.login)%>
       <%= a %></br>
@@ -13,4 +14,8 @@
   <%= render 'form' %>
   
   
+</div>
+
+<div class="narrowcontentright roundedcornersbox">
+Don't see a friend? They probably haven't signed into Slidee yet. As soon as they do, a Slidee-user will be created instantly and they'll show up here after you refresh.
 </div>

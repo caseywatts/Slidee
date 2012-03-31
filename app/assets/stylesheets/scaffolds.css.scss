@@ -81,7 +81,7 @@ div {
 .item{
    &:hover {
     background-color: #efe;}
-    padding: 1px 1px;
+    padding: 3px 1px;
 }
 
 #page_header{
@@ -255,4 +255,10 @@ font-family: 'Fugaz One', serif;
   font-size: 15px;
   background:#F77B0F;
   color:white;
+}
+
+.friendlist {
+  font-size: 10px;
+  padding: 0px 30px;
+  /*font-style:italic;*/
 }
