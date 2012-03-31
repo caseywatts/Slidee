@@ -1,8 +1,8 @@
 <div id="box<%=slidewithnote.id%>" class="box boxright" style="left:150%">
-  <div class="colslide "style="float:left; border-style: solid; border-width: 1px">
+  <div class="colslide">
     <%= image_tag slidewithnote.image.url, :width => "100%"%>
   </div>
-  <div class="colnote" style="border-style: solid; border-width: 1px">
+  <div class="colnote">
     <div class="addfriends">
       <%= link_to 'ADD FRIENDS', edit_notegroup_path(@notegroup) %>
     </div>

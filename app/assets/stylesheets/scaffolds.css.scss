@@ -149,14 +149,19 @@ float: left;
 
 .addfriends{
   /*float:right;*/
-  color:orange;
   height: 15px;
-  line-height: 0px;
-  font-size: 15px;
+  /*line-height: 0px;*/
+  font-size: 12px;
   text-align: left;
-  padding: 0px;
+  padding: 3px 5px 1px 5px;
   margin: 0px;
   top:0px;
+}
+
+.addfriends a{
+  color:#F77B0F;
+  &:hover {
+    color: #974B0F;}
 }
 
 h3 {

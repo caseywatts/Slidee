@@ -1,8 +1,12 @@
-<h1>Editing notegroup</h1>
-
-All Users In This Notegroup</br>
-<%= @notegroup.users.collect{|user| user.login}%>
-<%= render 'form' %>
-
-<%= link_to 'Show', @notegroup %> |
-<%= link_to 'Back', notegroups_path %>
+<div class="narrowcontentleft">
+  <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
+  
+  </br>
+  <%@notegroup.users.collect{|user| user.login}.each do |a| %>
+    <%= a%></br>
+  <%end%>
+  <%= render 'form' %>
+  
+  <%= link_to 'Back to Notetaking', @notegroup %>
+  
+</div>
