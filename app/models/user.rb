@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
       #:conditions => [ "d IN (?)", Presentations.map(&:id) ]
     #}
   #}
+  def self.current
+    Thread.current[:user]
+  end
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
 end

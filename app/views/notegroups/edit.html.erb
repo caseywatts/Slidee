@@ -5,12 +5,16 @@
   <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
 
         <div class="subsection">
-          <% @notegroup.everyonebutme.each do |user|%>
-            <li><%= user.login %></li>
-          <% end %>
+          <% if @notegroup.everyonebutme.empty?%>
+            Nobody
+          <%else%>
+            <% @notegroup.everyonebutme.each do |user|%>
+              <li><%= user.login %></li>
+              <% end %>
+          <%end%>
         </div>
 
-          <%= render 'form' %>
+        <%= render 'form' %>
 
   
 </div>

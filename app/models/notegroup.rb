@@ -4,7 +4,7 @@ class Notegroup < ActiveRecord::Base
   attr_accessor :users_to_add
 
 def everyonebutme
-  list = self.users - [@current_user]
+  userlist = self.users - [User.current]
 end
 
 

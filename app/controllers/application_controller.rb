@@ -4,8 +4,11 @@ class ApplicationController < ActionController::Base
   before_filter RubyCAS::Filter
   #before_filter :login_check #, :except => :access_denied
   before_filter :current_user
+  before_filter :set_current_user
   helper_method :current_user
   helper_method :logout_user
+
+
 
   protected
   def current_user
@@ -23,6 +26,9 @@ class ApplicationController < ActionController::Base
 
   def logout_user
     RubyCAS::Filter.logout(self)
+  end
+  def set_current_user
+    User.current = current_user
   end
 
 end
