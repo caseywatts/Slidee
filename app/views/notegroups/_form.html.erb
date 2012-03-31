@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <%= f.select :users_to_add, options_for_select(@users),{},{ :multiple => true, :size => 10 }%>
+  </br></br>
+  <h3>Invite a Friend</h3>
+  <%#= f.select :users_to_add, options_for_select(@users),{},{ :multiple => true, :size => 10 }%>
+  <%= f.select :users_to_add, options_for_select(@users),{:prompt => "Friends"},{}%>
 
-<div class="actions">
-    <%= f.submit %>
+  <div class="actions">
+    <%= f.submit "Add", :class => "roundedcorners orangebutton"%>
   </div>
 <% end %>

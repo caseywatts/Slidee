@@ -119,7 +119,7 @@ float: left;
   color: white;
   text-decoration: none;
   border: 0;
-  margin: 0;
+  margin: 3px;
   font-weight: bold;
   line-height: 1;
   border-radius: 3px;
@@ -145,6 +145,11 @@ float: left;
 
 .greenbutton{
   background:green;
+}
+
+.orangebutton{
+  background:#F77B0F;
+  color:white;
 }
 
 .addfriends{

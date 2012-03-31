@@ -1,14 +1,16 @@
 <div class="narrowcontentleft">
+  <%= button_to "Return to Notetaking", @notegroup, :method => "get", :class => "roundedcorners orangebutton"%>
+  </br> 
+
   <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
   
   </br>
   <%@notegroup.users.collect{|user| user.login}.each do |a| %>
-    <%#<%=if (a != current_user.login)%>%>
-      <%#<%= a %></br>%>
-    <%#<%=end%>%>
+    <%if (a != current_user.login)%>
+      <%= a %></br>
+    <%end%>
   <%end%>
   <%= render 'form' %>
   
-  <%= link_to 'Back to Notetaking', @notegroup %>
   
 </div>
