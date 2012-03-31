@@ -10,6 +10,7 @@ Lecture_Together::Application.routes.draw do
   resources :courses
   resources :slides
   resources :notegroup
+  match "home" => "home#index"
 
   get "home/index"
 

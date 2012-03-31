@@ -1,18 +1,26 @@
+<div class="narrowcontent">
 
-<div>
+  <h1>My Presentations</h1>
+  <div>
 <% current_user.notegroups.each do |notegroup| %>
-  <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %></br>
+  <div class="item">
+    <li>
+    <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %></br>
+    </li>
+  </div>
 <% end %>
 </div>
 
 
 </br></br>
 
-<div>
-<%= link_to 'New Presentation', new_presentation_path %>
+<div class="item">
+  <li><%= link_to 'New Presentation', new_presentation_path %></li>
 </div>
 
 </br></br>
 <div>
   Or ask a friend to add you to their presentation
+</div>
+
 </div>
