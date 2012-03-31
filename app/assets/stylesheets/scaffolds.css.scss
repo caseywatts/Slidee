@@ -226,3 +226,33 @@ font-family: 'Fugaz One', serif;
   /*text-align: right;*/
   /*color: whitesmoke;*/
 }
+
+.actions input {
+    /*background: #222222 url(/images/forms/alert-overlay.png) repeat-x;*/
+  /* this is a backup and should be overwritten by gradient */
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: white;
+  text-decoration: none;
+  border: 0;
+  margin: 3px;
+  font-weight: bold;
+  line-height: 1;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);*/
+  /*-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);*/
+  /*-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);*/
+  text-shadow: 0 -1px 1px #222222;
+  border-bottom: 1px solid #222;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  /*behavior: url(/PIE.htc);*/
+  font-size: 15px;
+  background:#F77B0F;
+  color:white;
+}
