@@ -39,6 +39,7 @@ gem 'paperclip'
 gem 'rubycas-client', "2.2.1" #bug https://github.com/rubycas/rubycas-client-rails/issues/6
 gem 'rubycas-client-rails'
 gem 'ruby-prof'
+gem 'aws-sdk'
 
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do
