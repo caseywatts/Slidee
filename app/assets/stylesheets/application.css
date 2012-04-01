@@ -97,9 +97,11 @@ div {
 /*}*/
 
 .item{
-   &:hover {
-    background-color: #efe;}
-    padding: 3px 1px;
+    padding: 3px 1px
+}
+
+.item:hover{
+    background-color: #efe;
 }
 
 #page_header{
@@ -197,13 +199,24 @@ float: left;
   background:red;
 }
 
+.redbutton:hover {
+  background-color: #DD0000;
+}
+
 .greenbutton{
-  background:green;
+  background:#009900;
+}
+
+.greenbutton:hover {
+  background-color: #008800;
 }
 
 .orangebutton{
-  background:#F77B0F;
-  color:white;
+  background-color:#F77B0F;
+}
+
+.orangebutton:hover {
+  background-color: #E76B0F;
 }
 
 .addfriends{
