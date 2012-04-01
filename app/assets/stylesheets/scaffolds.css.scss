@@ -225,18 +225,7 @@ font-family: 'Fugaz One', serif;
   color: #FFF;
 }
 
-.page_footer {
-  /*display:block;*/
-  height:30px;
-  /*width:100%;*/
-  background: silver;
-  /*float: left;*/
-  clear:both;
-  padding: 5px 30px 5px 30px;
-  /*margin won't work because there are floats above*/
-  /*margin: 100px 0px 0px 0px;*/
-  text-align: center;
-}
+
 
 .leftheader{
   /*background-color: #536E8D;*/
@@ -245,14 +234,17 @@ font-family: 'Fugaz One', serif;
   /*width: 10%;*/
   /*height: 35px;*/
   /*padding: 5px 8px;*/
+  display: inline;
 }
 
 .login {
-  float: right;
+  display: inline;
+  /*float: right;*/
   /*width: 84.2%;*/
   /*margin: 7px 5px;*/
   /*text-align: right;*/
   /*color: whitesmoke;*/
+  padding: 5px 0px;
 }
 
 .actions input {
@@ -293,4 +285,31 @@ font-family: 'Fugaz One', serif;
 .subsection {
   margin: 20px 0px 30px 0px;
   padding: 10px 30px;
+}
+
+
+//footerstuff
+* {
+margin: 0;
+}
+
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+
+.footer, .push {
+height: 4em;
+padding: 5px 30px 5px 30px;
+  display:block;
+  height:30px;
+  /*width:100%;*/
+  background: #EEE;
+  clear:both;
+  /*float: left;*/
+  /*margin won't work because there are floats above*/
+  /*margin: 100px 0px 0px 0px;*/
+  text-align: center
 }
