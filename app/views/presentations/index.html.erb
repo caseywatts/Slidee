@@ -9,7 +9,7 @@
           <%=image_tag("noun_project_453.svg", :size => "16x10")%>
           <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
           <div class="friendlist">
-            <div style="float:left; padding: 0px 3px;">
+            <div style="display: inline; padding: 0px 3px;">
               <%= link_to '[+]', edit_notegroup_path(notegroup) %>
             </div>
             <% notegroup.everyonebutme.each do |user|%>
