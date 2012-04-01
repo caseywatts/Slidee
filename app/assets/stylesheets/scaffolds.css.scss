@@ -30,6 +30,10 @@ pre {
 a {
   color: #000;
   text-decoration: none;
+  &:hover {
+    color: #999;
+    /*text-shadow: 0 0px 1px black;*/
+  }
  }
 
 div {
@@ -88,6 +92,14 @@ div {
 /*width:100%*/
 }
 
+.widecontent{
+/*background: #D2EBFA;*/
+margin: 50px 50px 50px 50px;
+padding: 30px 30px;
+width: 60%;
+float: left;
+text-align: left;
+}
 
 .narrowcontentright{
 background: #D2EBFA;
@@ -283,8 +295,8 @@ font-family: 'Fugaz One', serif;
 }
 
 .subsection {
-  margin: 20px 0px 30px 0px;
-  padding: 10px 30px;
+  margin: 5px 0px 30px 0px;
+  padding: 0px 30px;
 }
 
 
@@ -312,4 +324,17 @@ padding: 5px 30px 5px 30px;
   /*margin won't work because there are floats above*/
   /*margin: 100px 0px 0px 0px;*/
   text-align: center
+}
+
+.titlefont {
+  font-size:50px;
+  font-family: Fugaz One;
+  color: #F77B0F;
+  /*text-shadow: 0 -1px 1px grey;*/
+
+}
+
+.hiddenedit {
+visibility:hidden;
+float:right;
 }

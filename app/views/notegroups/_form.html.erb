@@ -1,4 +1,4 @@
-<h3>Invite a Friend</h3>
+<h4>Invite a Friend</h4>
 <div class="subsection">
 
 <%= form_for(@notegroup) do |f| %>
@@ -18,8 +18,8 @@
   <%#= f.select :users_to_add, options_for_select(@users),{},{ :multiple => true, :size => 10 }%>
   <%= f.select :users_to_add, options_for_select(@users),{:prompt => "Friends"},{}%>
 
-  <div class="actions">
-    <%= f.submit "Add", :class => "roundedcornersbutton orangebutton"%>
+  <div class="actions" style="display:inline;">
+    <%= f.submit "Add", :class => "roundedcornersbutton orangebutton", :style => "display:inline;"%>
   </div>
 <% end %>
 </div>

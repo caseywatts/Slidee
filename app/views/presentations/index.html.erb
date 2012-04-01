@@ -5,17 +5,10 @@
             No Slides Yet
     <%else%>
       <% current_user.notegroups.each do |notegroup| %>
-        <div class="item" style="clear:both">
+        <div class="item" style="clear:both" onmouseover="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'visible';" onmouseout="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'hidden';">
           <%=image_tag("noun_project_453.svg", :size => "16x10")%>
-          <%= link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
-          <div class="friendlist">
-            <div style="display: inline; padding: 0px 3px;">
-              <%= link_to '[+]', edit_notegroup_path(notegroup) %>
-            </div>
-            <% notegroup.everyonebutme.each do |user|%>
-              <%= user.login %>
-            <% end %>
-          </div>
+          <%=link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
+          <span id="notegroup-edit-<%=notegroup.id%>" class="hiddenedit"><%=link_to image_tag("noun_project_1064.jpg", :size => "15x15"), edit_notegroup_path(notegroup)%></span>
         </div>
       <% end %>
     <% end %>

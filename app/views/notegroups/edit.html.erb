@@ -1,12 +1,13 @@
 <div class="narrowcontentleft">
-  <%= button_to "Return to Notetaking", @notegroup, :method => "get", :class => "roundedcornersbutton orangebutton"%>
-  </br> 
+  <%#= button_to "Return to Notetaking", @notegroup, :method => "get", :class => "roundedcornersbutton orangebutton"%>
+  <%#</br> %>
 
-  <h3>Friends in <%= @notegroup.presentation.deckoriginal_file_name %></h3>
-
+  <h3><%=link_to(@notegroup.presentation.deckoriginal_file_name, @notegroup)%></h3>
+  </br>
+  <h4>Friends in <%=@notegroup.presentation.deckoriginal_file_name%></h4>
         <div class="subsection">
           <% if @notegroup.everyonebutme.empty?%>
-            Nobody
+            <div style="color:silver;">Nobody</div>
           <%else%>
             <% @notegroup.everyonebutme.each do |user|%>
               <li><%= user.login %></li>
@@ -15,8 +16,6 @@
         </div>
 
         <%= render 'form' %>
-
-  
 </div>
 
 <div class="narrowcontentright roundedcornersbox">
