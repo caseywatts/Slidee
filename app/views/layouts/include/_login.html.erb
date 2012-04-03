@@ -2,9 +2,9 @@
   <p class="login_status">
      <%if current_user %>
        <strong><%= current_user.login %> </strong>
-       <%= link_to "Logout", :controller => 'users', :action => 'logout' %>
+       <%= link_to "Logout", logout_path %>
     <% else %>
-      <strong><%= link_to "Login", presentations_path%></strong>
+      <strong><%= link_to "Login", presentations_path %></strong>
     <% end %>
   </p>
 </div>

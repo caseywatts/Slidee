@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :current_user
   before_filter :set_current_user
   helper_method :current_user
-  helper_method :logout_user
+  #helper_method :logout_user
 
 
 
@@ -25,9 +25,9 @@ class ApplicationController < ActionController::Base
     end)
   end
 
-  def logout_user
-    RubyCAS::Filter.logout(self)
-  end
+  #def logout_user
+    #RubyCAS::Filter.logout(self)
+  #end
   def set_current_user
     User.current = current_user
   end

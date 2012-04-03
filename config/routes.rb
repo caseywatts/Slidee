@@ -5,7 +5,7 @@ Lecture_Together::Application.routes.draw do
   match 'presentations/new' => 'presentations#new' #, :as => :takenotes
   match 'presentations/:id' => 'presentations#takenotes' #, :as => :takenotes
 
-  match "users/:logout" => 'users#logout', :as => :logout
+  match "logout" => 'users#logout'#, :as => :logout
 
   resources :users
   resources :presentations
@@ -14,8 +14,6 @@ Lecture_Together::Application.routes.draw do
   resources :notegroup
   match "home" => "home#index"
 
-
-  get "users/logout"
   get "home/index"
 
   # The priority is based upon order of creation:

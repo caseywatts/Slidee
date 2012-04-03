@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_filter :current_user
+
   # GET /users
   # GET /users.json
   def index
@@ -24,8 +26,8 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    if current_user
-      redirect_to :controller => "presentations", :action => "index", :notice => 'User was successfully created.'
+    if User.find_by_login(session[:cas_user])
+      redirect_to :controller => "presentations", :action => "index"
     else
       @user = User.new
       respond_to do |format|
@@ -94,12 +96,11 @@ end
 private
   def current_user
     @current_user ||= (
-    if session[:cas_user]
+    if session[:cas_user] #redundant, because CAS filter will catch everything?
       if User.find_by_login(session[:cas_user])
         User.find_by_login(session[:cas_user])
       else
-        #redirect_to :controller=>'users', :action => 'new'
-        #User.create(:login => session[:cas_user])
+        nil
       end
     else
       nil
