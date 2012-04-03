@@ -58,7 +58,7 @@ class NotegroupsController < ApplicationController
   # PUT /notegroups/1.json
   def update
     @notegroup = Notegroup.find(params[:id])
-    @notegroup.users << User.find_by_login(params[:notegroup][:users_to_add])
+    @notegroup.users << User.find_by_login(params[:notegroup][:users_to_add]) unless params[:notegroup][:users_to_add].empty?
 
     respond_to do |format|
       if @notegroup.update_attributes(params[:notegroup])
