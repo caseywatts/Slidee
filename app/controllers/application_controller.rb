@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   #include Magick
-  before_filter RubyCAS::Filter
+  before_filter RubyCAS::Filter, :unless => :skip_login? 
   #before_filter :login_check #, :except => :access_denied
   before_filter :current_user
   before_filter :set_current_user
@@ -30,5 +30,11 @@ class ApplicationController < ActionController::Base
   def set_current_user
     User.current = current_user
   end
+
+private
+def skip_login?
+    false
+end
+
 
 end
