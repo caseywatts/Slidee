@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
       if User.find_by_login(session[:cas_user])
         User.find_by_login(session[:cas_user])
       else
-        User.create(:login => session[:cas_user])
+        redirect_to :controller=>'users', :action => 'new'
+        #User.create(:login => session[:cas_user])
       end
     else
       nil

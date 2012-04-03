@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :presentations
   has_and_belongs_to_many :notegroups
+  validates :email, :presence => true, :email => true
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+
   #named_scope :all_presentations, lambda {
     #{
       #:include => :presentations,

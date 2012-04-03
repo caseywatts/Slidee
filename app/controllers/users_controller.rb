@@ -80,4 +80,26 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+private
+  def current_user
+    @current_user ||= (
+    if session[:cas_user]
+      if User.find_by_login(session[:cas_user])
+        User.find_by_login(session[:cas_user])
+      else
+        #redirect_to :controller=>'users', :action => 'new'
+        #User.create(:login => session[:cas_user])
+      end
+    else
+      nil
+    end)
+  end
+
+
+private
+def skip_login?
+    true
+end
+
 end
