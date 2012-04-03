@@ -85,6 +85,12 @@ class UsersController < ApplicationController
     end
   end
 
+def logout
+  @current_user = nil
+  RubyCAS::Filter.logout(self)
+end
+
+
 private
   def current_user
     @current_user ||= (
