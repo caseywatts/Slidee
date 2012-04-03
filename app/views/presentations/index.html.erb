@@ -4,7 +4,7 @@
     <% if User.current.notegroups.empty?%>
             No Slides Yet
     <%else%>
-      <% current_user.notegroups.each do |notegroup| %>
+      <% current_user.notegroups.reverse.each do |notegroup| %>
         <div class="item" style="clear:both" onmouseover="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'visible';" onmouseout="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'hidden';">
           <%=image_tag("noun_project_453.svg", :size => "16x10")%>
           <%=link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
