@@ -1,6 +1,9 @@
 <div class="narrowcontentleft">
-  <h3>My Slides</h3>
-  <div>
+  <h3 style="display:inline;">My Slides</h3>
+  <div style="float:right; padding: 0px 5px;">
+    <%= button_to "+ Add Slide", new_presentation_path, :method => "get", :class => "roundedcornersbutton greenbutton"%>
+  </div>
+  <div class="subsection">
     <% if User.current.notegroups.empty?%>
             No Slides Yet
     <%else%>
@@ -16,9 +19,6 @@
 
   </br></br>
 
-  <div style="float:left; padding: 0px 5px;">
-    <%= button_to "+ Add Slide", new_presentation_path, :method => "get", :class => "roundedcornersbutton greenbutton"%>
-  </div>
 </div>
 
 <div class="narrowcontentright roundedcornersbox">
