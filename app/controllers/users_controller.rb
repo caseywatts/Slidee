@@ -24,11 +24,14 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @user }
+    if current_user
+      redirect_to :controller => "presentations", :action => "index", :notice => 'User was successfully created.'
+    else
+      @user = User.new
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render :json => @user }
+      end
     end
   end
 
@@ -44,7 +47,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, :notice => 'User was successfully created.' }
+        format.html { redirect_to :controller => "presentations", :action => "index", :notice => 'User was successfully created.' }
         format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
