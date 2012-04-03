@@ -5,7 +5,7 @@
   <h3><%=link_to(@notegroup.presentation.deckoriginal_file_name, @notegroup)%></h3>
   </br>
   <h4>Friends in <%=@notegroup.presentation.deckoriginal_file_name%></h4>
-        <div class="subsection">
+        <div class="subsection" style="overflow:auto; max-height:300px;">
           <% if @notegroup.everyonebutme.empty?%>
             <div style="color:silver;">Nobody</div>
           <%else%>
