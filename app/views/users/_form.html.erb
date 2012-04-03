@@ -14,6 +14,7 @@
   <div class="field">
     <%= f.label :login %><br />
     <%= f.text_field :login, :value => session[:cas_user], :disabled => :true %>
+    <%= f.hidden_field :login, :value => session[:cas_user] %>
   </div>
 
   <div class="field">

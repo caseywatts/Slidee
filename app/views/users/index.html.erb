@@ -1,4 +1,5 @@
-<h1>Listing users</h1>
+<div class="narrowcontentleft">
+  <h1>Listing users</h1>
 
 <table>
   <tr>
@@ -6,13 +7,6 @@
     <th>First name</th>
     <th>Last name</th>
     <th>Email</th>
-    <th>Crypted password</th>
-    <th>Password salt</th>
-    <th>Persistence token</th>
-    <th>Auth type</th>
-    <th>Perishable token</th>
-    <th>Superuser</th>
-    <th>Supermode</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,13 +18,6 @@
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= user.email %></td>
-    <td><%= user.crypted_password %></td>
-    <td><%= user.password_salt %></td>
-    <td><%= user.persistence_token %></td>
-    <td><%= user.auth_type %></td>
-    <td><%= user.perishable_token %></td>
-    <td><%= user.superuser %></td>
-    <td><%= user.supermode %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -41,3 +28,4 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+</div>
