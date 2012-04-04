@@ -1,7 +1,7 @@
 <div id="login" class="login">
   <p class="login_status">
      <%if current_user %>
-       <strong><%= current_user.fullname %></strong> &nbsp
+       <strong><%= link_to current_user.fullname, edit_user_path(User.current) %></strong> &nbsp
        <span style="font-size: 10px; font-style: italic;"><%= link_to "Logout", logout_path %></span>
     <% else %>
       <strong><%= link_to "Login", presentations_path %></strong>
