@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
   def self.current=(user)
     Thread.current[:user] = user
   end
+  def fullname
+    self.first_name + " " + self.last_name
+  end
 end

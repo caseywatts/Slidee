@@ -10,7 +10,7 @@
             <div style="color:silver;">Nobody</div>
           <%else%>
             <% @notegroup.everyonebutme.each do |user|%>
-              <li><%= user.login %></li>
+              <li><%= user.fullname %></li>
               <% end %>
           <%end%>
         </div>
