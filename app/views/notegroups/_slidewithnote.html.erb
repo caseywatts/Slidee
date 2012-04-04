@@ -7,7 +7,7 @@
       <%= link_to 'ADD FRIENDS', edit_notegroup_path(@notegroup) %>
     </div>
     <div id="notegroup<%=notegroup.id%>note<%=slidewithnote.id%>" style="float:right; width:100%; height:100%">
-      <iframe class="etherpadnote" id="etherpadnote<%=notegroup.id%>-<%=slidewithnote.id%>" src="http://slideeetherpad.cloudfoundry.com/p/note<%=notegroup.id%><%=slidewithnote.id%>?showControls=true&amp;showChat=true&amp;showLineNumbers=false&amp;useMonospaceFont=false&amp;userName=<%=current_user.login%>&amp;noColors=false&amp;hideQRCode=false" style="border: 0; width: 100%; height: 100%;"></iframe> 
+      <iframe class="etherpadnote" id="etherpadnote<%=notegroup.id%>-<%=slidewithnote.id%>" src="http://slideeetherpad.cloudfoundry.com/p/note<%=notegroup.id%><%=slidewithnote.id%>?showControls=true&amp;showChat=true&amp;showLineNumbers=false&amp;useMonospaceFont=false&amp;userName=<%=User.current.fullname%>&amp;noColors=false&amp;hideQRCode=false" style="border: 0; width: 100%; height: 100%;"></iframe> 
 <%#
   http://etherpad-local.com:9001
   http://beta.etherpad.org
