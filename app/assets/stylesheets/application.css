@@ -118,6 +118,20 @@ float: left;
 text-align: left;
 }
 
+.logoleft{
+width: 325px;
+margin: 100px 50px 100px 150px;
+float: left;
+}
+
+.logoright{
+margin: 25px;
+padding: 30px;
+width: 400px;
+float: left;
+text-align: center;
+}
+
 .narrowcontentright{
 background: #D2EBFA;
 margin: 50px 50px 50px 0px;
