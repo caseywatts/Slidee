@@ -1,9 +1,9 @@
 <div id="box<%=slidewithnote.id%>" class="box boxright" style="left:150%">
 
   <div class="colnote">
-    <div class="addfriends">
-      <%= link_to 'ADD FRIENDS', edit_notegroup_path(@notegroup) %>
-    </div>
+    <%#<div class="addfriends">%>
+      <%#= link_to 'ADD FRIENDS', edit_notegroup_path(@notegroup) %>
+    <%#</div>%>
     <div id="notegroup<%=notegroup.id%>note<%=slidewithnote.id%>" style="float:right; width:100%; height:100%">
       <iframe class="etherpadnote" id="etherpadnote<%=notegroup.id%>-<%=slidewithnote.id%>" src="http://slideeetherpad.cloudfoundry.com/p/note<%=notegroup.id%><%=slidewithnote.id%>?showControls=true&amp;showChat=true&amp;showLineNumbers=false&amp;useMonospaceFont=false&amp;userName=<%=User.current.fullname%>&amp;noColors=false&amp;hideQRCode=false" style="border: 0; width: 100%; height: 100%;"></iframe> 
 <%#
