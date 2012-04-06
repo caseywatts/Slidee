@@ -1,7 +1,7 @@
 //# Place all the behaviors and hooks related to the matching controller here.
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
+window.onload = function(){
 //#For loading bar
 function showMe(id) {
   var elem = document.getElementById(id);
@@ -29,11 +29,12 @@ $(document).ready(function() {
 
 // <%=User.current.fullname%>
 // <%=notegroup.id%>-<%=slidewithnote.id%>
+username = "CW";
 
 // Next Slide //
 function addpadtobox(x){
   etherpaddiv = x.children(".colnote").children(".etherpaddiv")
-  etherpaddiv.pad({'padId':etherpaddiv.attr("id"),'userName':'caseywatts'});
+  etherpaddiv.pad({'padId':etherpaddiv.attr("id"),'userName':username});
 }
 
 function removepadfrombox(x){
@@ -239,5 +240,5 @@ if(e.which == 18) isAlt=false;
  //}
 //});
 
-
+};//on window load
 
