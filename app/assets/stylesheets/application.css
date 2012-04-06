@@ -248,6 +248,18 @@ float: left;
   background-color: #E76B0F;
 }
 
+.whitearrowbutton{
+  background-color: #666;
+  font-weight: bold;
+  padding: 1px 12px 3px;
+}
+
+.whitearrowbutton:hover {
+  background-color: #888;
+  font-weight: bold;
+}
+
+
 .addfriends{
   /*float:right;*/
   height: 15px;

@@ -1,6 +1,10 @@
 <div id="notice"><%= notice %></div>
-<%#<input type="button" value="Next Slide" onClick="nextslide();">%>
-<%#<input type="button" value="Previous Slide" onClick="previousslide();">%>
+
+<div style="position:absolute; top:7px; right:460px; height:40px;">
+  <input type="button" value="←" class="roundedcornersbutton whitearrowbutton" onClick="previousslide();" >
+  <input type="button" value="→" class="roundedcornersbutton whitearrowbutton" onClick="nextslide();">
+</div>
+
 <div id="container">
   <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
 </div>
