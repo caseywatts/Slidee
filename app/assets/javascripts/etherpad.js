@@ -2,17 +2,17 @@
 
   $.fn.pad = function( options ) {
     var settings = {
-      'host'		 : 'etherpad-local.com:9001',
+      'host'		 : 'slideeetherpad.cloudfoundry.com',
       'baseUrl'		 : '/p/',
-      'showControls'     : false,
-      'showChat'	 : true,
+      'showControls'     : true,
+      'showChat'	 : false,
       'showLineNumbers'  : false,
       'userName'	 : 'unnamed',
       'useMonospaceFont' : false,
       'noColors'         : false,
       'hideQRCode'	 : false,
-      'width'   : 100,
-      'height'  : 100
+      'width'   : "100%",
+      'height'  : "100%"
     };
 
     // This writes a new frame if required

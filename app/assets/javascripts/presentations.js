@@ -12,10 +12,14 @@ function showMe(id) {
 
 // Make the first slide visible (they're all off the the right side at left:150%)
 $(document).ready(function() {
-  $('#container').children().first().addClass("boxcenter");
-  $('#container').children().first().css('left','0%');
-  $('#container').children().first().removeClass("boxleft");
-  $('#container').children().first().removeClass("boxright");
+  firstbox = $('#container').children(":eq(0)")
+  secondbox = $('#container').children(":eq(1)")
+  firstbox.addClass("boxcenter");
+  firstbox.css('left','0%');
+  firstbox.removeClass("boxleft");
+  firstbox.removeClass("boxright");
+  addpadtobox(firstbox);
+  addpadtobox(secondbox);
 });
 
 
@@ -23,23 +27,62 @@ $(document).ready(function() {
 // This is all based off of jquery animation: http://api.jquery.com/animate/
 // This code was based off the simple example here: http://stackoverflow.com/questions/4741880/slide-a-div-offscreen-using-jquery to make our divs move.
 
+// <%=User.current.fullname%>
+// <%=notegroup.id%>-<%=slidewithnote.id%>
+
 // Next Slide //
+function addpadtobox(x){
+  etherpaddiv = x.children(".colnote").children(".etherpaddiv")
+  etherpaddiv.pad({'padId':etherpaddiv.attr("id"),'userName':'caseywatts'});
+}
+
+function removepadfrombox(x){
+ x.children(".colnote").children(".etherpaddiv").children("iframe").remove()
+}
+
 function nextslide() {
   if ($('#container').children(".boxright").length){
+    lastbox = $('#container').children(".boxleft").last();
+    currentbox = $('#container').children(".boxcenter");
+    nextbox = $('#container').children(".boxright:eq(0)");
+    nextnextbox = $('#container').children(".boxright:eq(1)");
+
     //make current slide go away (to left)
-    makeleft($('#container').children(".boxcenter"));
+    makeleft(currentbox);
     //make the next slide appear (from right)
-    makecenter($('#container').children(".boxright").first());
+    makecenter(nextbox);
+
+    //remove iframe to one leaving and add iframe to next standby slide
+    addpadtobox(nextnextbox);
+    removepadfrombox(currentbox);
+
+    //focus on the correct pad
+    //broken until we're on the same domain
+    //nextbox.children(".colnote").children(".etherpaddiv").children("iframe").contents().children("#editorcontainer").children("iframe").contents().children("#magicdomid1").focus()
   }
 }
 
 // Previous Slide //
 function previousslide(){
   if ($('#container').children(".boxleft").length){
+    lastbox = $('#container').children(".boxleft").last();
+    currentbox = $('#container').children(".boxcenter");
+    nextbox = $('#container').children(".boxright:eq(0)");
+    nextnextbox = $('#container').children(".boxright:eq(1)");
+
     //make current one go away (to right)
-    makeright($('#container').children(".boxcenter"));
+    makeright(currentbox);
     //make the last one appear (from left)
-    makecenter($('#container').children(".boxleft").last());
+    makecenter(lastbox);
+
+    //remove iframe to one leaving and add iframe to the slide we're retruning to
+    addpadtobox(lastbox);
+    removepadfrombox(nextbox);
+
+    //focus on the correct pad
+    //broken until we're on the same domain
+    //lastbox.children(".colnote").children(".etherpaddiv").children("iframe").contents().children("#editorcontainer").children("iframe").contents().children("#magicdomid1").focus()
+
   }
 }
 
@@ -64,6 +107,11 @@ function makeleft(x){
   x.animate({
     left: '-150%'}, 200);
 }
+
+
+
+$("#note<%=slidewithnotejs.id%>").pad({'padId':"LectureTogetherNote<%=slidewithnotejs.id%>",'width':'100%','height':'100%','showControls':true,'userName':'caseywatts'});
+
 
 //// MOUSE ENACTED SHORTCUTS ////
 
