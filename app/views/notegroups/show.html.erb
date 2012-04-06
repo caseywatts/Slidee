@@ -1,8 +1,9 @@
 <div id="notice"><%= notice %></div>
 
-<div style="position:absolute; top:7px; right:460px; height:40px;">
+<div style="position:absolute; top:7px; right:460px; height:25px;">
   <input type="button" value="←" class="roundedcornersbutton whitearrowbutton" onClick="previousslide();" >
   <input type="button" value="→" class="roundedcornersbutton whitearrowbutton" onClick="nextslide();">
+  <span style="position: relative; top:4px;"><%= link_to image_tag("noun_project_1257.svg", :size => "17x17"), edit_notegroup_path(@notegroup)%></span>
 </div>
 
 <div id="container">
