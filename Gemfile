@@ -40,6 +40,7 @@ gem 'rubycas-client', "2.2.1" #bug https://github.com/rubycas/rubycas-client-rai
 gem 'rubycas-client-rails'
 gem 'ruby-prof'
 gem 'aws-sdk'
+gem 'prawn'
 
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do
