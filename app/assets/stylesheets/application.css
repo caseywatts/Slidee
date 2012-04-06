@@ -133,17 +133,19 @@ text-align: left;
 }
 
 .logoleft{
-width: 325px;
-margin: 100px 50px 100px 150px;
+width: 40%;
+margin: 100px auto;
+text-align:center;
 float: left;
+/*padding: 100px 50px 100px 150px;*/
+height:100%
 }
 
 .logoright{
-margin: 25px;
-padding: 30px;
-width: 400px;
+width: 60%;
+margin: 35px auto;
+text-align: left;
 float: left;
-text-align: center;
 }
 
 .narrowcontentright{
