@@ -256,9 +256,11 @@ float: left;
 
 .whitearrowbutton:hover {
   background-color: #888;
-  font-weight: bold;
 }
 
+.whitearrowbutton:active {
+  background-color: #899;
+}
 
 .addfriends{
   /*float:right;*/
