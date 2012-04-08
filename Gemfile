@@ -41,6 +41,7 @@ gem 'rubycas-client-rails'
 gem 'ruby-prof'
 gem 'aws-sdk'
 gem 'prawn'
+gem 'wicked_pdf'
 
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do

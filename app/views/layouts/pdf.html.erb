@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <style type='text/css'>
+.page {
+  width:            195mm;
+  height:           297mm;
+  page-break-after: always;
+  overflow:         hidden;
+}
+
+.page .landscape {
+  position:                  relative;
+  margin:                    270mm 0;
+  width:                     270mm;
+  height:                    195mm;
+  -webkit-transform:         rotate(-90deg);
+  -webkit-transform-origin:  0mm 0mm;
+}
+    </style>
+
+
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

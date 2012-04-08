@@ -21,21 +21,30 @@ class NotegroupsController < ApplicationController
     # Map the user to an EtherpadLite Author
     author = ether.author("my_app_user_#{current_user.id}", :name => current_user.fullname)
 
-    # Get or create a two hour long session for this Author in this Group
-    session[:ep_sessions] ||= {} #this should just happen during login
-    sess = session[:ep_sessions][@group.id] ? ether.get_session(session[:ep_sessions][@group.id]) : @group.create_session(author, 120)
-    if sess.expired?
-      sess.delete
-      sess = @group.create_session(author, 60)
-    end
-    session[:ep_sessions][@group.id] = sess.id
-    # Set the EtherpadLite session cookie. This will automatically be picked up by the jQuery plugin's iframe.
-    cookies[:sessionID] = {:value => sess.id, :domain => "afternoon-dawn-1379.herokuapp.com"}
+    ## Get or create a two hour long session for this Author in this Group
+    #session[:ep_sessions] ||= {} #this should just happen during login
+    #sess = session[:ep_sessions][@group.id] ? ether.get_session(session[:ep_sessions][@group.id]) : @group.create_session(author, 120)
+    #if sess.expired?
+      #sess.delete
+      #sess = @group.create_session(author, 60)
+    #end
+    #session[:ep_sessions][@group.id] = sess.id
+    ## Set the EtherpadLite session cookie. This will automatically be picked up by the jQuery plugin's iframe.
+    #cookies[:sessionID] = {:value => sess.id, :domain => "afternoon-dawn-1379.herokuapp.com"}
 
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @notegroup }
+      format.pdf do
+        render :pdf           => @notegroup.presentation.deckoriginal_file_name,
+               :layout        => 'pdf.html', # use 'pdf.html' for a pdf.html.erb file
+               :show_as_html  => params[:debug].present?,
+               :page_size     => 'letter'
+               #:exe_path => "/usr/bin/wkhtmltopdf"
+               #:wkhtmltopdf   => "/usr/bin/wkhtmltopdf" # path to binary
+
+      end
     end
   end
 
