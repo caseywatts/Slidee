@@ -1,20 +1,22 @@
   <body onload='number_pages'>
-    <div class="page">
-      <h1>Class notes - <%= @notegroup.presentation.deckoriginal_file_name %></h1>
-    <h1>Downloaded <% time = Time.new %>
-    <%= time.strftime("%B %d, %Y") %></h1>
-    <h1>      <%= User.current.fullname %> </h1>
+    <div class="page" id="firstpage">
+      <h1 class="title">Class notes - <%= @notegroup.presentation.deckoriginal_file_name %></h1>
+      <h1 class="dl_time">Downloaded <% time = Time.new %><%= time.strftime("%B %d, %Y") %></h1>
+      <h1 class="username"><%= User.current.fullname %> </h1>
 
     <% if !@notegroup.everyonebutme.empty?%>
-    <h2>With
+    <p id="collaborators">With
+      <ul>
       <% @notegroup.everyonebutme.each do |user|%>
         <li><%= user.fullname %></li>
       <% end %>
-    </h2>
+      </ul>
+    </p>
     <%end%>
 
     </div>
-<div id="container">
-	<% slide_number = 1 %>
-  <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
-</div>
+    <div id="container">
+	    <% slide_number = 1 %>
+      <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
+    </div>
+  </body>
