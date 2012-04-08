@@ -3,7 +3,16 @@
       <h1>Class notes - <%= @notegroup.presentation.deckoriginal_file_name %></h1>
     <h1>Downloaded <% time = Time.new %>
     <%= time.strftime("%B %d, %Y") %></h1>
-      <h1>      <%= User.current.fullname %> </h1>
+    <h1>      <%= User.current.fullname %> </h1>
+
+    <% if !@notegroup.everyonebutme.empty?%>
+    <h2>With
+      <% @notegroup.everyonebutme.each do |user|%>
+        <li><%= user.fullname %></li>
+      <% end %>
+    </h2>
+    <%end%>
+
     </div>
 <div id="container">
   <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
