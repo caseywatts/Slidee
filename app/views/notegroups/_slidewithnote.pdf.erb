@@ -7,7 +7,8 @@
     <%= image_tag slidewithnote.image.url, :style => "width:100%;"%>
   </div>
   <div class="notes">
-  <% padhtml = @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s) if @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)%>
-  <%= padhtml[:html].html_safe %>
+  <%if @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)%>
+      <% @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)[:html].html_safe %>
+  <%end%>
   </div>
 </div>
