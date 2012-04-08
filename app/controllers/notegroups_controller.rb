@@ -14,12 +14,12 @@ class NotegroupsController < ApplicationController
   # GET /notegroups/1.json
   def show
     #require 'etherpad-lite'
-    ether = EtherpadLite.connect('http://slideeetherpad.cloudfoundry.com', 'HwcKLaD2oyADLbX6ZO8ZgA719Du9NA17')
+    @ether = EtherpadLite.connect('http://slideeetherpad.cloudfoundry.com', 'HwcKLaD2oyADLbX6ZO8ZgA719Du9NA17')
     @notegroup = Notegroup.find(params[:id])
-    @group = ether.group("my_app_group_#{@notegroup.id}")
+    @group = @ether.group("my_app_group_#{@notegroup.id}")
     #@pads = @group.pads
     # Map the user to an EtherpadLite Author
-    author = ether.author("my_app_user_#{current_user.id}", :name => current_user.fullname)
+    author = @ether.author("my_app_user_#{current_user.id}", :name => current_user.fullname)
 
     ## Get or create a two hour long session for this Author in this Group
     #session[:ep_sessions] ||= {} #this should just happen during login

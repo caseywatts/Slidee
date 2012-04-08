@@ -32,7 +32,7 @@ gem 'jquery-rails'
 
 
 ##Specific to our App
-gem 'etherpad-lite'
+gem 'etherpad-lite', :git => "git://github.com/jhollinger/ruby-etherpad-lite.git"
 gem 'pg'
 gem 'rmagick'
 gem 'paperclip'
