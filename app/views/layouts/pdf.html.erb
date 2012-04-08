@@ -7,14 +7,13 @@
     <%= wicked_pdf_javascript_include_tag "number_pages" %>
     <style type='text/css'>
 .page {
-  width:            195mm;
-  height:           297mm;
-  <%#page-break-after: always;%>
-  overflow:         hidden;
+  <%#width:            195mm;%>
+  <%#height:           297mm;%>
+  page-break-after: always;
+  <%#overflow:         hidden;%>
 }
 
 .slide {
-  page-break-before: always;
 }
 
 .page .landscape {
