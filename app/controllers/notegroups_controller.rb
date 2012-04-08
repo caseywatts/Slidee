@@ -31,13 +31,13 @@ class NotegroupsController < ApplicationController
     #session[:ep_sessions][@group.id] = sess.id
     ## Set the EtherpadLite session cookie. This will automatically be picked up by the jQuery plugin's iframe.
     #cookies[:sessionID] = {:value => sess.id, :domain => "afternoon-dawn-1379.herokuapp.com"}
-
+    file_name = File.basename(@notegroup.presentation.deckoriginal_file_name, File.extname(@notegroup.presentation.deckoriginal_file_name));
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @notegroup }
       format.pdf do
-        render :pdf           => @notegroup.presentation.deckoriginal_file_name,
+        render :pdf           => file_name,
                :layout        => 'pdf.html', # use 'pdf.html' for a pdf.html.erb file
                :show_as_html  => params[:debug].present?,
                :page_size     => 'letter'
