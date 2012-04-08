@@ -1,8 +1,8 @@
 <div class="page">
   <div class="slidenum">
-    Slide <%#= slide_number %>
+    Slide <%= slide_number.to_s %>
   </div>
-	<%# slide_number = slide_number + 1 %>
+	<% slide_number += 1 %>
   <div class="slide">
     <%= image_tag slidewithnote.image.url, :style => "width:100%;"%>
   </div>
