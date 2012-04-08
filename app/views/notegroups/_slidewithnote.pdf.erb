@@ -1,4 +1,3 @@
-<page>
 <div class="page">
   <div class="slide">
     <%= image_tag slidewithnote.image.url, :style => "width:100%;"%>
@@ -7,6 +6,3 @@
   <%= @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)[:html].html_safe %>
   </div>
 </div>
-
-<div class="page-break"></div>
-</page>
