@@ -15,5 +15,6 @@
 
     </div>
 <div id="container">
+	<% @slide_number = 1 %>
   <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
 </div>
