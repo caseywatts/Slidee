@@ -7,7 +7,7 @@
   <p>
       Hardware: Hands-On<br><br>oh hiii Rach!<br>oh hi there!hiiya!<br>I&#x27;m <s>Bob Bobberson</s><br>lolol<br><br>whoaaaa this is nifty! good job :D<br>bahaha awesome<br>woooo it&#x27;s so fast! it feels even faster than google docs!<br><br>this is the NEW WAY TO TAKE NOTESSSSSS<br>MWAHAHAHA<br>^_^<br><br>I like this color!!!! YAYYYYY<br><br><br>
 
-  <%= @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)[:html].to_html %>
+  <%= @ether.client.getHTML("notegroup"+notegroup.id.to_s+"note"+slidewithnote.id.to_s)[:html].html_safe %>
   </p>
   </div>
 </div>
