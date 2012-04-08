@@ -42,7 +42,7 @@ gem 'ruby-prof'
 gem 'aws-sdk'
 gem 'prawn'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-heroku'
+
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do
      gem 'pg'
