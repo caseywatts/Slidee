@@ -1,12 +1,9 @@
   <body onload='number_pages'>
     <div class="page">
     <h1>Class notes from <% time = Time.new %>
-      <%= time.strftime("%B %d, %Y") %>
-      </br>
-      (<%= @notegroup.presentation.deckoriginal_file_name %>)
-      </br>
-      <%= User.current.fullname %>
-    </h1>
+    <%= time.strftime("%B %d, %Y") %></h1>
+      <h1><%= @notegroup.presentation.deckoriginal_file_name %></h1>
+      <h1>      <%= User.current.fullname %> </h1>
     </div>
 <div id="container">
   <%= render :partial => "notegroups/slidewithnote", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
