@@ -6,7 +6,7 @@
       <h1 class="username"><%= User.current.fullname %> </h1>
 
     <% if !@notegroup.everyonebutme.empty?%>
-    <p id="collaborators">With
+    <p class="collaborators">With
       <ul>
       <% @notegroup.everyonebutme.each do |user|%>
         <li><%= user.fullname %></li>
