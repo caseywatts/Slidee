@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
     <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <style type='text/css'>
       body {font-family: Georgia "Times New Roman" serif; font-size: 12pt; line-height: 1.3; }
       .page {
@@ -40,10 +42,17 @@
       }
       
       /* Defining the header of the file */
+      #firstpage{
+        font-family: 'Droid Sans';
+      }
+
       #firstpage h1 {text-align: center; }
-      h1#title {text-decoration: underline; font-weight: bold; }
-      h1#username {font-style: italics; }
-      p#collaborators {font-size: 14pt; }
+      #slidee {font-family: 'Fugaz One', serif; text-decoration:underline;}
+      #title {text-decoration: underline; font-weight: bold;}
+      #username {font-style: italics; }
+      #collaborators {font-size: 14pt; }
+
+      
     </style>
 
 

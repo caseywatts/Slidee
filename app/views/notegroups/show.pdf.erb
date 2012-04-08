@@ -1,5 +1,6 @@
   <body onload='number_pages'>
     <div class="firstpage" id="firstpage">
+      <h1 class="slidee">Slidee Class Notes</h1>
       <h1 class="title">Class notes - <%= @notegroup.presentation.deckoriginal_file_name %></h1>
       <h1 class="dl_time">Downloaded <% time = Time.new %><%= time.strftime("%B %d, %Y") %></h1>
       <h1 class="username"><%= User.current.fullname %> </h1>
