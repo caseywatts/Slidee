@@ -1,7 +1,0 @@
-<h2>Class notes from <%
-time = Time.new
-puts time.strftime("%B %d, %Y") %> (<%= @notegroup.presentation.deckoriginal_file_name %>)</h2>
-<div id="container">
-	<% slide_number = 1 %>
-  <%= render :partial => "notegroups/printslide", :collection => @notegroup.presentation.slides, :locals => {:notegroup => @notegroup} %>
-</div>
