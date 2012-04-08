@@ -3,7 +3,8 @@
       <h1 class="slidee">Slidee Class Notes</h1>
       <h1 class="title"><%= @notegroup.presentation.deckoriginal_file_name %></h1>
       <h3 class="dl_time">Downloaded <% time = Time.new %><%= time.strftime("%B %d, %Y") %></h1>
-  
+      </br>
+      </br>
     <% if !@notegroup.everyonebutme.empty?%>
       <h2 class="username" style="font-weight:normal;"><span style="font-weight:bold"><%= User.current.fullname %></span> with</h2>
       <p class="collaborators">
