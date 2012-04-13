@@ -62,7 +62,7 @@ class NotegroupsController < ApplicationController
   # GET /notegroups/1/edit
   def edit
     @notegroup = Notegroup.find(params[:id])
-    @users = User.all.collect{|user| user.login} - @notegroup.users.collect{|user| user.login}
+    @users = User.all - @notegroup.users
   end
 
   # POST /notegroups
@@ -85,7 +85,7 @@ class NotegroupsController < ApplicationController
   # PUT /notegroups/1.json
   def update
     @notegroup = Notegroup.find(params[:id])
-    @notegroup.users << User.find_by_login(params[:notegroup][:users_to_add]) unless params[:notegroup][:users_to_add].empty?
+    @notegroup.users << User.find(params[:notegroup][:users_to_add]) unless params[:notegroup][:users_to_add].empty?
 
     respond_to do |format|
       if @notegroup.update_attributes(params[:notegroup])

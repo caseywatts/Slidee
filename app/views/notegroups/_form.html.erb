@@ -14,9 +14,8 @@
     </div>
   <% end %>
 
-
   <%#= f.select :users_to_add, options_for_select(@users),{},{ :multiple => true, :size => 10 }%>
-  <%= f.select :users_to_add, options_for_select(@users),{:prompt => "Who?"},{}%>
+  <%= f.collection_select :users_to_add, @users, :id, :fullname, {:prompt => "Who?"},{}%>
 
   <div class="actions" style="display:inline;">
     <%= f.submit "Add", :class => "roundedcornersbutton orangebutton", :style => "display:inline;"%>
