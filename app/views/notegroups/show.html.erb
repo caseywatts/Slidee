@@ -4,7 +4,7 @@
   <input type="button" value="←" class="roundedcornersbutton whitearrowbutton" onClick="previousslide();" >
   <input type="button" value="→" class="roundedcornersbutton whitearrowbutton" onClick="nextslide();">
   <span style="position: relative; top:4px;"><%= link_to image_tag("noun_project_1257.svg", :size => "17x17"), edit_notegroup_path(@notegroup)%></span>
-  <%= link_to "Download PDF", notegroup_path(@notegroup, :format => "pdf") %>
+  <%= link_to "Download PDF", notegroup_path(@notegroup, :format => "pdf", :target => '_blank') %>
 
 </div>
 
