@@ -11,7 +11,7 @@
         <div class="item" style="clear:both" onmouseover="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'visible';" onmouseout="document.getElementById('notegroup-edit-<%=notegroup.id%>').style.visibility = 'hidden';">
           <%=image_tag("noun_project_453.svg", :size => "16x10")%>
           <%=link_to notegroup.presentation.deckoriginal_file_name, notegroup %>
-          <span id="notegroup-edit-<%=notegroup.id%>" class="hiddenedit"><%=link_to image_tag("noun_project_1064.jpg", :size => "15x15"), edit_notegroup_path(notegroup)%></span>
+          <span id="notegroup-edit-<%=notegroup.id%>" class="hiddenedit"><%=link_to image_tag("noun_project_1257.svg", :size => "15x15"), edit_notegroup_path(notegroup)%></span>
         </div>
       <% end %>
     <% end %>
