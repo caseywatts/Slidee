@@ -2,12 +2,18 @@
   <h3>New presentation</h3>
   </br>
   <div class="subsection">
-  <%= render 'form' %>
-  <%= link_to 'Back', presentations_path %>
+    Only PDFs may be uploaded. </br></br>To use a PPT file with Slidee, follow the instructions to the right.</br></br></br>
+    <%= render 'form' %>
   </div>
 </div>
 
-<div class="narrowcontentright roundedcornersbox">
-  Only PDFs may be uploaded. </br></br>
-  You'll have to manually export .ppt to .pdf for now. But someday soon we'll be able to do that for you ;D
+<div class="narrowcontentright roundedcornersbox" style ="text-align: left;">
+  Uploading and processing may take as long as ~30 sec. </br></br></br>
+  <span style="text-decoration:underline;">To convert a PPT file to a PDF</span></br>
+  Open it in Powerpoint (or Keynote) and export it.</br></br>
+  The export function could be in one of a few places.
+  <li style="text-align:left">File... Save as... PDF
+  </li>  <li style="text-align:left">File... Save as PDF
+  </li>  <li style="text-align:left">File... Export... to PDF
+  </li>
 </div>

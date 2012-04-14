@@ -1,22 +1,22 @@
 <%= form_for(@presentation) do |f| %>
   <% if @presentation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
-
       <ul>
       <% @presentation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <%unless msg == "Uploaded file name can't be empty"%>
+        <%#it's really hard to deal with paperclip errors. We need a more elegant way to do this :/%>
+          <li><%= msg %></li>
+        <%end%>
       <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.file_field :deckoriginal %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Upload" %>
     <%#:onclick => "this.disabled=true; showMe('loading');" %>
   </div>
   

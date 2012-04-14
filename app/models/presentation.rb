@@ -14,7 +14,7 @@ class Presentation < ActiveRecord::Base
   #after_deckoriginal_post_process :create_slides
   #validates :deckoriginal, :attachment_presence => true
   validates_attachment_presence :deckoriginal
-  validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf']
+  validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf'], :message => "must be PDF."
 
 
 

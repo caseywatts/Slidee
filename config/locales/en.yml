@@ -3,3 +3,19 @@
 
 en:
   hello: "Hello world"
+
+en:  
+  activerecord:
+    models: 
+      #user: "Customer"
+    attributes:
+      presentation:
+        deckoriginal: "Uploaded file"
+        deckoriginal_content_type: "Filetype"
+        deckoriginal_file_name: "Uploaded file name"
+    errors:
+      models:
+        presentation:
+          attributes:
+            deckoriginal:
+              content_type: "must be a PDF."
