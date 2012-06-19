@@ -18,3 +18,7 @@
 /test
 
 /config/database.yml
+/vendor/*
+.rbenv-version
+*.orig
+*~

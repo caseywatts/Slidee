@@ -9,7 +9,13 @@ class Presentation < ActiveRecord::Base
   has_many :users
   has_many :notegroups
   #has_attached_file :deck #we'll have to convert some deckoriginals to pdf first, we'll use this later
-  has_attached_file :deckoriginal,  :content_type => 'application/pdf'
+  has_attached_file :deckoriginal,  :content_type => 'application/pdf',
+                    :styles => {
+                      :pdf => {
+                        :format => "pdf",
+                        :processors => [:docsplit_pdf]
+                      }
+                    }
   #validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf'], :if => deckoriginal_attached?
   #after_deckoriginal_post_process :create_slides
   #validates :deckoriginal, :attachment_presence => true

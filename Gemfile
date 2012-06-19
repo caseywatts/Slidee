@@ -42,6 +42,10 @@ gem 'ruby-prof'
 gem 'aws-sdk'
 gem 'prawn'
 gem 'wicked_pdf'
+gem 'docsplit-paperclip-processor'
+gem 'pry'
+gem 'pry-rails'
+
 
 
    # If you use a different database in development, hide it from Cloud Foundry.
