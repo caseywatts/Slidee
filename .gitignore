@@ -18,3 +18,7 @@
 /test
 
 /config/database.yml
+/bin/*
+.rbenv-version
+*~
+*.DS_Store
