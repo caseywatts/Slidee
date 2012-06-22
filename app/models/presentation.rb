@@ -9,7 +9,7 @@ class Presentation < ActiveRecord::Base
   has_many :users
   has_many :notegroups
   #has_attached_file :deck #we'll have to convert some deckoriginals to pdf first, we'll use this later
-  has_attached_file :deckoriginal,  :content_type => 'application/pdf',
+  has_attached_file :deckoriginal,
                     :styles => {
                       :pdf => {
                         :format => "pdf",
@@ -20,7 +20,7 @@ class Presentation < ActiveRecord::Base
   #after_deckoriginal_post_process :create_slides
   #validates :deckoriginal, :attachment_presence => true
   validates_attachment_presence :deckoriginal
-  validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf'], :message => "must be PDF."
+  #validates_attachment_content_type :deckoriginal, :content_type => ['application/pdf'], :message => "must be PDF."
 
 
 
@@ -39,7 +39,7 @@ class Presentation < ActiveRecord::Base
     #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
     #@presentation
     #slides = ImageList.new(Slidedeck.last.deck.url)
-    deck = ImageList.new('public' + self.deckoriginal.url.gsub(/\?.*$/,""))
+    deck = ImageList.new('public' + self.deckoriginal.url(:pdf).gsub(/\?.*$/,""))
     #deck = ImageList.new('app/assets/TrainingSample.pdf')
     deck.each { |slide|
       temporaryfile = Tempfile.new("my_picture")

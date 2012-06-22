@@ -42,9 +42,10 @@ gem 'ruby-prof'
 gem 'aws-sdk'
 gem 'prawn'
 gem 'wicked_pdf'
-gem 'docsplit-paperclip-processor'
+gem 'docsplit-paperclip-processor', :git => "git://github.com/tienle/docsplit-paperclip-processor.git"
 gem 'pry'
 gem 'pry-rails'
+gem 'docsplit', '0.6.0'
 
 
 

@@ -4,6 +4,14 @@ GIT
   specs:
     etherpad-lite (0.0.4)
 
+GIT
+  remote: git://github.com/tienle/docsplit-paperclip-processor.git
+  revision: 6535c170ff7d7473cdaf614eb0eeaf27aa5034b9
+  specs:
+    docsplit-paperclip-processor (0.1.2)
+      paperclip (~> 2.4)
+      ruby-filemagic
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -55,9 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    docsplit-paperclip-processor (0.1.2)
-      paperclip (~> 2.4)
-      ruby-filemagic
+    docsplit (0.6.0)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
@@ -166,7 +172,8 @@ DEPENDENCIES
   aws-sdk
   cloudfoundry-jquery-rails
   coffee-rails (~> 3.1.1)
-  docsplit-paperclip-processor
+  docsplit (= 0.6.0)
+  docsplit-paperclip-processor!
   etherpad-lite!
   jquery-rails
   json

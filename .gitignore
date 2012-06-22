@@ -22,3 +22,4 @@
 .rbenv-version
 *.orig
 *~
+*.DS_Store
