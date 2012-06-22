@@ -45,19 +45,19 @@ gem 'wicked_pdf'
 gem 'docsplit-paperclip-processor', :git => "git://github.com/tienle/docsplit-paperclip-processor.git"
 #gem 'pry'
 #gem 'pry-rails'
-gem 'docsplit', '0.6.0'
+#gem 'docsplit', '0.6.0'
 
 
 
    # If you use a different database in development, hide it from Cloud Foundry.
-   group :development do
-     gem 'pg'
-   end
+   #group :development do
+     #gem 'pg'
+   #end
 
    # Rails 3.1 can use the latest mysql2 gem.
-   group :production do
-     gem 'mysql2'
-   end
+   #group :production do
+     #gem 'mysql2'
+   #end
 
    # For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
    # gem 'jquery-rails'
