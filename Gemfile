@@ -61,7 +61,7 @@ gem 'docsplit', '0.6.0'
 
    # For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
    # gem 'jquery-rails'
-   gem 'cloudfoundry-jquery-rails'
+   #gem 'cloudfoundry-jquery-rails'
 
    # For Ruby 1.9 Cloud Foundry requires a tweak to devise.
    # Uncomment next line if you plan to use devise.
