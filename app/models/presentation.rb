@@ -37,17 +37,34 @@ class Presentation < ActiveRecord::Base
 
   def create_slides
     #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
-    #@presentation
-    #slides = ImageList.new(Slidedeck.last.deck.url)
-    deck = ImageList.new('public' + self.deckoriginal.url(:pdf).gsub(/\?.*$/,""))
-    #deck = ImageList.new('app/assets/TrainingSample.pdf')
-    deck.each { |slide|
-      temporaryfile = Tempfile.new("my_picture")
-      slide.write("jpeg:" + temporaryfile.path) #writes the slideimage to a temporary file
-      #location = "app/assets/presentations/" + image.hash.to_s + ".jpg" 
-      #slide.write(location)
-      Slide.create(:presentation => self, :image => temporaryfile)
-    }
+    pdflocation = Dir[self.deckoriginal.url(:pdf).gsub(/\?.*$/,"")] #strips off the trailing random digits (from paperclip)
+
+    pdflocation = "app/assets/CHEM+230+9.14.2011.ppt"
+    basename = File.basename(pdflocation, '.*')
+    temporary_dir = Dir.tmpdir
+
+    # Extract Text Into An Array
+    Docsplit.extract_text(pdflocation, :output => temporary_dir)
+    texts = File.open(File.join(temporary_dir, "#{basename}.txt")).read #we can predict how it'll be formatted~
+    textarray = texts.split("\f") # \f is "flood page" or "clear everything from the page" = "newpage" in pdf speak
+
+    # Extract Images Into An Array
+    Docsplit.extract_images(pdflocation, :size => "1000x", :format => :jpg, :output => temporary_dir)
+
+    binding.pry
+    textarray.each_with_index do |text, i|
+      Slide.create(:presentation => self, :image => File.open(File.join(temporary_dir, "#{basename}_#{i+1}.jpg")), :slidetext => text)
+      binding.pry
+    end
+    #deck = ImageList.new('public' + self.deckoriginal.url(:pdf).gsub(/\?.*$/,""))
+
+    #deck.each { |slide|
+      #temporaryfile = Tempfile.new("my_picture")
+      #slide.write("jpeg:" + temporaryfile.path) #writes the slideimage to a temporary file
+      ##location = "app/assets/presentations/" + image.hash.to_s + ".jpg" 
+      ##slide.write(location)
+      #Slide.create(:presentation => self, :image => temporaryfile)
+    #}
   end
   private
 

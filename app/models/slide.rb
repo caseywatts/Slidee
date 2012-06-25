@@ -1,7 +1,6 @@
 class Slide < ActiveRecord::Base
   belongs_to :presentation
-  #validates_presence_of :presentation_id
-  #attr_accessor :image
+  #validates :slidetext
 
   has_attached_file :image, :styles => {},
     :storage => :s3,

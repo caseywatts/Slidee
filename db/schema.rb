@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328200746) do
+ActiveRecord::Schema.define(:version => 20120625202300) do
 
   create_table "courses", :force => true do |t|
     t.datetime "created_at"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120328200746) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "slidetext"
   end
 
   create_table "users", :force => true do |t|
