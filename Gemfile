@@ -44,8 +44,8 @@ gem 'prawn'
 gem 'wicked_pdf'
 gem 'docsplit', '0.6.0'
 gem 'docsplit-paperclip-processor', :git => "git://github.com/tienle/docsplit-paperclip-processor.git"
-#gem 'pry'
-#gem 'pry-rails'
+gem 'pry'
+gem 'pry-rails'
 
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do
