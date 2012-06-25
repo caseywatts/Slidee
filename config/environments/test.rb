@@ -36,4 +36,8 @@ Lecture_Together::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  #use factory girl
+  #config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  
 end

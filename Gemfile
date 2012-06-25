@@ -34,7 +34,7 @@ gem 'jquery-rails'
 ##Specific to our App
 gem 'etherpad-lite', :git => "git://github.com/jhollinger/ruby-etherpad-lite.git"
 gem 'pg'
-gem 'rmagick'
+gem 'rmagick', :require => false #require false is because it always explodes errors everywhere :P
 gem 'paperclip'
 gem 'rubycas-client', "2.2.1" #bug https://github.com/rubycas/rubycas-client-rails/issues/6
 gem 'rubycas-client-rails'
@@ -50,4 +50,7 @@ group :test, :development do
   gem 'capybara'
   gem 'pry'
   gem 'pry-rails'
+  gem 'mysql2' #because it's easier to work with - we don't need pg like Heroku does
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end

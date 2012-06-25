@@ -23,3 +23,4 @@
 *.orig
 *~
 *.DS_Store
+.rspec
