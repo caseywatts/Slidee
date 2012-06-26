@@ -45,7 +45,7 @@ class PresentationsController < ApplicationController
     respond_to do |format|
       if @presentation.save
         @presentation.update_attributes(:course => Course.last) #maybe this should be a hidden field in the form
-        @presentation.create_slides
+        @presentation.create_slides #creates all slides (with images and text stored in each slideobject)
         @notegroup = Notegroup.new(:presentation => @presentation)
         @presentation.notegroups << @notegroup
         current_user.notegroups << @notegroup

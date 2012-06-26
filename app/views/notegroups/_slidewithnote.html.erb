@@ -4,7 +4,7 @@
     <%#<div class="addfriends">%>
       <%#= link_to 'ADD FRIENDS', edit_notegroup_path(@notegroup) %>
     <%#</div>%>
-    <div class="etherpaddiv" id="notegroup<%=notegroup.id%>note<%=slidewithnote.id%>" style="float:right; width:100%; height:100%">
+  <div class="etherpaddiv" id="<%=@notegroup.pads[slidewithnote_counter] %>" style="float:right; width:100%; height:100%">
 <%#
   http://etherpad-local.com:9001
   http://beta.etherpad.org

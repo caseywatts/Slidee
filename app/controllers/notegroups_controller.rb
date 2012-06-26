@@ -16,6 +16,7 @@ class NotegroupsController < ApplicationController
     #require 'etherpad-lite'
     @ether = EtherpadLite.connect('http://slideeetherpad.cloudfoundry.com', 'HwcKLaD2oyADLbX6ZO8ZgA719Du9NA17')
     @notegroup = Notegroup.find(params[:id])
+    @notegroup.create_pads
     @group = @ether.group("my_app_group_#{@notegroup.id}")
     #@pads = @group.pads
     # Map the user to an EtherpadLite Author
@@ -70,6 +71,7 @@ class NotegroupsController < ApplicationController
   def create
     @notegroup = Notegroup.new(params[:notegroup])
     @notegroup.users << current_user
+    @notegroup.create_pads
     respond_to do |format|
       if @notegroup.save
         format.html { redirect_to @notegroup, :notice => 'Notegroup was successfully created.' }

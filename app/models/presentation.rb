@@ -37,25 +37,27 @@ class Presentation < ActiveRecord::Base
 
   def create_slides
     #TODO @presentation.slidedeck ---this ought to work but doesn't yet - I must've messed up relationships?
-    pdflocation = Dir[self.deckoriginal.url(:pdf).gsub(/\?.*$/,"")] #strips off the trailing random digits (from paperclip)
-
-    pdflocation = "app/assets/CHEM+230+9.14.2011.ppt"
+    pdflocation = self.deckoriginal.url(:pdf).gsub(/\?.*$/,"") #strips off the trailing random digits (from paperclip)
+    pdflocation_absolute = Rails.root.to_s + "/public" + pdflocation
     basename = File.basename(pdflocation, '.*')
     temporary_dir = Dir.tmpdir
 
     # Extract Text Into An Array
-    Docsplit.extract_text(pdflocation, :output => temporary_dir)
+    Docsplit.extract_text(pdflocation_absolute, :output => temporary_dir)
     texts = File.open(File.join(temporary_dir, "#{basename}.txt")).read #we can predict how it'll be formatted~
-    textarray = texts.split("\f") # \f is "flood page" or "clear everything from the page" = "newpage" in pdf speak
-
+    textarray = texts.split("\f", -1) # \f is "flood page" or "clear everything from the page" = "newpage" in pdf speak
+                                      # -1 say to not omit null strings. We need them for counting at least~
     # Extract Images Into An Array
-    Docsplit.extract_images(pdflocation, :size => "1000x", :format => :jpg, :output => temporary_dir)
+    Docsplit.extract_images(pdflocation_absolute, :size => "1000x", :format => :jpg, :output => temporary_dir)
 
-    binding.pry
+    # Create Slides out of Text and Images! :D
     textarray.each_with_index do |text, i|
-      Slide.create(:presentation => self, :image => File.open(File.join(temporary_dir, "#{basename}_#{i+1}.jpg")), :slidetext => text)
-      binding.pry
+      #sometimes there are more text than images - we can drop the last nil text if that's there
+      if File.exists?(File.join(temporary_dir, "#{basename}_#{i+1}.jpg"))
+        Slide.create(:presentation => self, :image => File.open(File.join(temporary_dir, "#{basename}_#{i+1}.jpg")), :slidetext => text)
+      end
     end
+
     #deck = ImageList.new('public' + self.deckoriginal.url(:pdf).gsub(/\?.*$/,""))
 
     #deck.each { |slide|
