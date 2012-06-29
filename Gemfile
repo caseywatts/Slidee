@@ -23,9 +23,6 @@ gem 'jquery-rails'
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
 # To use debugger
 # gem 'ruby-debug'
 
@@ -42,7 +39,7 @@ gem 'ruby-prof'
 gem 'aws-sdk'
 gem 'prawn'
 gem 'wicked_pdf'
-
+gem "capistrano"
 
    # If you use a different database in development, hide it from Cloud Foundry.
    group :development do
